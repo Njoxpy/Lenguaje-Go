@@ -7,6 +7,11 @@ import (
 )
 
 func main(){
+
+	// variables
+	var name string = "Kinjektile Ngwale"
+
+	fmt.Println(name)
 	fmt.Println("day 1 palying ground golang!")
 	fmt.Println("The time is: ", time.Now())
 }
