@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Godbless Nyagawa" /><link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Basics - My Project Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Basics";
+        var mkdocs_page_input_path = "Welcome \u0026 Basics (Tour Section 1)/index.md";
+        var mkdocs_page_url = "/Lenguaje-Go/Welcome%20%26%20Basics%20%28Tour%20Section%201%29/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', "G-ABC123");
+      </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Project Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advice/">Advice</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../docs/">Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../roadmap/">Roadmap</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Basics (Tour Section 1)</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Basics</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Packages, Variables, Functions (17 parts)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/">Packages, Variables, Functions (17 parts)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Project Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Welcome & Basics (Tour Section 1)</li>
+      <li class="breadcrumb-item active">Basics</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Njoxpy/Lenguaje-Go/edit/master/docs/Welcome & Basics (Tour Section 1)/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="hello">Hello, 世界<a class="headerlink" href="#hello" title="Permanent link">&para;</a></h3>
+<p>Welcome to the <strong>Go Programming Language Tour</strong> — an interactive guide designed to help you learn Go step by step.</p>
+<hr />
+<h3 id="navigating-the-tour">Navigating the Tour<a class="headerlink" href="#navigating-the-tour" title="Permanent link">&para;</a></h3>
+<p>The tour is divided into several modules.
+You can access them by clicking <strong>“A Tour of Go”</strong> at the top-left of the page.</p>
+<p>To view the <strong>table of contents</strong> at any time, click the <strong>menu</strong> icon in the top-right corner.</p>
+<p>Each module contains a series of <strong>slides</strong> and <strong>hands-on exercises</strong>.
+Use the navigation options below to move through the tour:</p>
+<ul>
+<li><strong>Previous</strong> or <strong>PageUp</strong> → Go to the previous page</li>
+<li><strong>Next</strong> or <strong>PageDown</strong> → Move to the next page</li>
+</ul>
+<hr />
+<h3 id="running-and-editing-code">Running and Editing Code<a class="headerlink" href="#running-and-editing-code" title="Permanent link">&para;</a></h3>
+<p>The tour is interactive — try it now!
+Click <strong>Run</strong> (or press <strong>Shift + Enter</strong>) to compile and execute the program on a remote server.
+The output will appear directly below the code editor.</p>
+<p>Each example demonstrates a specific feature or concept in Go.
+These programs are designed as <strong>starting points</strong> for your own experimentation — feel free to <strong>edit</strong> the code and <strong>run it again</strong>.</p>
+<p>You can also:</p>
+<ul>
+<li>Click <strong>Format</strong> (shortcut: <strong>Ctrl + Enter</strong>) to format your code using the <code>gofmt</code> tool.</li>
+<li>Toggle syntax highlighting by clicking the <strong>Syntax</strong> button.</li>
+</ul>
+<p>When you’re ready to continue, click the <strong>right arrow</strong> below or press <strong>PageDown</strong>.</p>
+<hr />
+<h3 id="example-program">Example Program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, 世界&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3 id="go-in-your-language">Go in Your Language<a class="headerlink" href="#go-in-your-language" title="Permanent link">&para;</a></h3>
+<p>The tour is available in multiple languages:</p>
+<ul>
+<li>Português do Brasil</li>
+<li>Català</li>
+<li>中文（简体）</li>
+<li>Česky</li>
+<li>Bahasa Indonesia</li>
+<li>日本語</li>
+<li>Polski</li>
+<li>Español</li>
+<li>ภาษาไทย</li>
+<li>Українською</li>
+</ul>
+<p>Click <strong>Next</strong> or press <strong>PageDown</strong> to continue.</p>
+<hr />
+<h3 id="go-offline-optional">Go Offline (Optional)<a class="headerlink" href="#go-offline-optional" title="Permanent link">&para;</a></h3>
+<p>You can also take this tour <strong>offline</strong>.
+The offline version runs locally on your computer and doesn’t require internet access.</p>
+<p>To set it up:</p>
+<ol>
+<li><strong>Install Go</strong> on your system.</li>
+<li>Run the following command:</li>
+</ol>
+<p><code>bash
+   go install golang.org/x/website/tour@latest</code></p>
+<p>This installs the tour binary in your <code>GOPATH/bin</code> directory.</p>
+<p>Then, launch the tour program to open a browser window with your <strong>local version</strong> of the tour.</p>
+<p>(You can, of course, continue using this online version instead.)</p>
+<hr />
+<h3 id="the-go-playground">The Go Playground<a class="headerlink" href="#the-go-playground" title="Permanent link">&para;</a></h3>
+<p>This tour is powered by the <strong>Go Playground</strong>, a web service hosted on <strong>golang.org</strong>.</p>
+<p>Here’s how it works:</p>
+<ul>
+<li>The Playground receives your Go program, compiles, links, and runs it securely inside a sandbox.</li>
+<li>It then returns the output to your browser.</li>
+</ul>
+<h4 id="playground-limitations">Playground Limitations:<a class="headerlink" href="#playground-limitations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The time inside the playground always starts at <strong>2009-11-10 23:00:00 UTC</strong> — a fixed reference that helps ensure consistent program output.</li>
+<li>Programs have <strong>execution time</strong>, <strong>CPU</strong>, and <strong>memory limits</strong>.</li>
+<li>Programs <strong>cannot access external network hosts</strong>.</li>
+<li>The Playground always uses the <strong>latest stable release</strong> of Go.</li>
+</ul>
+<p>To learn more, read <em>Inside the Go Playground</em>.</p>
+<hr />
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Welcome to the playground!&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The time is&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3 id="congratulations">Congratulations<a class="headerlink" href="#congratulations" title="Permanent link">&para;</a></h3>
+<p>You’ve completed the <strong>first module</strong> of the Go Tour!</p>
+<p>Click <strong>A Tour of Go</strong> at the top to explore more topics,
+or proceed directly to the <strong>next lesson</strong> to continue your journey.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../roadmap/" class="btn btn-neutral float-left" title="Roadmap"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="btn btn-neutral float-right" title="Packages, Variables, Functions (17 parts)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Njoxpy/Lenguaje-Go" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../roadmap/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

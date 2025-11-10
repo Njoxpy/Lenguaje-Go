@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Godbless Nyagawa" /><link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/Flow%20control%20statements%3A%20for%2C%20if%2C%20else%2C%20switch%20and%20defer/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Flow Control Statements in Go - My Project Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Flow Control Statements in Go";
+        var mkdocs_page_input_path = "Flow control statements: for, if, else, switch and defer.md";
+        var mkdocs_page_url = "/Lenguaje-Go/Flow%20control%20statements%3A%20for%2C%20if%2C%20else%2C%20switch%20and%20defer/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', "G-ABC123");
+      </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Project Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advice/">Advice</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../docs/">Docs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../roadmap/">Roadmap</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Basics (Tour Section 1)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/">Basics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Packages, Variables, Functions (17 parts)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/">Packages, Variables, Functions (17 parts)</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Project Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Flow Control Statements in Go</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Njoxpy/Lenguaje-Go/edit/master/docs/Flow control statements: for, if, else, switch and defer.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="flow-control-statements-in-go">Flow Control Statements in Go<a class="headerlink" href="#flow-control-statements-in-go" title="Permanent link">&para;</a></h1>
+<h2 id="the-for-loop">The <code>for</code> Loop<a class="headerlink" href="#the-for-loop" title="Permanent link">&para;</a></h2>
+<p>Go features a single, versatile looping construct: the <code>for</code> loop. This simplicity in design makes Go's looping mechanism both powerful and easy to understand.</p>
+<h3 id="basic-for-loop-structure">Basic For Loop Structure<a class="headerlink" href="#basic-for-loop-structure" title="Permanent link">&para;</a></h3>
+<p>The basic <code>for</code> loop consists of three components, separated by semicolons:</p>
+<ol>
+<li>
+<p><strong>Init Statement</strong>: Executed once before the first iteration</p>
+</li>
+<li>
+<p>Often contains a short variable declaration</p>
+</li>
+<li>
+<p>Variables declared here are only visible within the loop's scope</p>
+</li>
+<li>
+<p><strong>Condition Expression</strong>: Evaluated before each iteration</p>
+</li>
+<li>
+<p>Loop continues as long as this condition is <code>true</code></p>
+</li>
+<li>
+<p>Loop terminates when condition becomes <code>false</code></p>
+</li>
+<li>
+<p><strong>Post Statement</strong>: Executed at the end of each iteration</p>
+</li>
+</ol>
+<h3 id="important-syntax-notes">Important Syntax Notes:<a class="headerlink" href="#important-syntax-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unlike C, Java, or JavaScript, parentheses <code>()</code> are not used around the three components</li>
+<li>Curly braces <code>{}</code> are mandatory for the loop body</li>
+</ul>
+<h3 id="basic-for-loop-example">Basic For Loop Example<a class="headerlink" href="#basic-for-loop-example" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">i</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="flexible-for-loop-syntax">Flexible For Loop Syntax<a class="headerlink" href="#flexible-for-loop-syntax" title="Permanent link">&para;</a></h3>
+<p>The <code>for</code> loop in Go is flexible - both the initialization and post statements are optional:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">sum</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="while-loop-equivalent">While Loop Equivalent<a class="headerlink" href="#while-loop-equivalent" title="Permanent link">&para;</a></h3>
+<p>In Go, the <code>for</code> loop can be used as a while loop by dropping the semicolons. This makes Go's <code>for</code> loop serve the same purpose as C's <code>while</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">sum</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="infinite-loops">Infinite Loops<a class="headerlink" href="#infinite-loops" title="Permanent link">&para;</a></h3>
+<p>To create an infinite loop in Go, simply omit the condition. This creates a clean and concise way to express endless loops:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// This loop will run forever</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="conditional-statements">Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permanent link">&para;</a></h2>
+<h3 id="the-if-statement">The <code>if</code> Statement<a class="headerlink" href="#the-if-statement" title="Permanent link">&para;</a></h3>
+<p>Go's <code>if</code> statements follow the same philosophy as its <code>for</code> loops:</p>
+<ul>
+<li>No parentheses <code>()</code> around the condition</li>
+<li>Curly braces <code>{}</code> are mandatory</li>
+</ul>
+<p>Here's a basic example:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">&quot;math&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">sqrt</span><span class="p">(</span><span class="o">-</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;i&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprint</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">Sqrt</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="if-with-initialization">If with Initialization<a class="headerlink" href="#if-with-initialization" title="Permanent link">&para;</a></h3>
+<p>Go allows you to include a short initialization statement before the condition:</p>
+<ul>
+<li>The initialized variables are only in scope for the <code>if</code> block</li>
+<li>This is useful for keeping code concise and variables scoped appropriately</li>
+</ul>
+<p>Example of if with initialization:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">&quot;math&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">lim</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">Pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">);</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">lim</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">v</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">lim</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="if-else-statements">If-Else Statements<a class="headerlink" href="#if-else-statements" title="Permanent link">&para;</a></h3>
+<p>In Go, variables declared in an <code>if</code> statement's initialization are also accessible in any corresponding <code>else</code> blocks:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">&quot;math&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="nx">lim</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">Pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">);</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">lim</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">v</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%g &gt;= %g\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">,</span><span class="w"> </span><span class="nx">lim</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Note: v is not accessible here</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">lim</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="practice-exercise-implementing-square-root-function">Practice Exercise: Implementing Square Root Function<a class="headerlink" href="#practice-exercise-implementing-square-root-function" title="Permanent link">&para;</a></h2>
+<h3 id="problem-description">Problem Description<a class="headerlink" href="#problem-description" title="Permanent link">&para;</a></h3>
+<p>Create a function that computes the square root of a number using iterative approximation.</p>
+<h3 id="the-challenge">The Challenge<a class="headerlink" href="#the-challenge" title="Permanent link">&para;</a></h3>
+<p>Given a number <code>x</code>, find a number <code>z</code> where <code>z²</code> is as close as possible to <code>x</code>.</p>
+<h3 id="algorithm-overview">Algorithm Overview<a class="headerlink" href="#algorithm-overview" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Use Newton's method for approximation</li>
+<li>Formula: <code>z -= (z*z - x) / (2*z)</code></li>
+<li>Each iteration brings us closer to the actual square root</li>
+</ol>
+<h3 id="implementation-requirements">Implementation Requirements<a class="headerlink" href="#implementation-requirements" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Start with the following template:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">Sqrt</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Your implementation here</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="implementation-steps">Implementation Steps<a class="headerlink" href="#implementation-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Initial Setup</strong></p>
+</li>
+<li>
+<p>Start with z = 1.0 or z = float64(1)</p>
+</li>
+<li>
+<p>You can also try other starting values like x or x/2</p>
+</li>
+<li>
+<p><strong>Iteration Process</strong></p>
+</li>
+<li>
+<p>Initially, run the calculation 10 times</p>
+</li>
+<li>Print each intermediate value of z</li>
+<li>
+<p>Later, modify to stop when changes become very small</p>
+</li>
+<li>
+<p><strong>Optimization</strong></p>
+</li>
+<li>Experiment with different stopping conditions</li>
+<li>Compare your results with math.Sqrt</li>
+<li>Try different initial values for z</li>
+</ol>
+<h3 id="note-on-newtons-method">Note on Newton's Method<a class="headerlink" href="#note-on-newtons-method" title="Permanent link">&para;</a></h3>
+<p>The formula <code>z -= (z*z - x) / (2*z)</code> works because:</p>
+<ul>
+<li><code>(z*z - x)</code> measures how far z² is from the target x</li>
+<li>Division by <code>2z</code> (the derivative of z²) scales the adjustment</li>
+<li>This method converges quickly for square roots</li>
+</ul>
+<p>Switch
+A switch statement is a shorter way to write a sequence of if - else statements. It runs the first case whose value is equal to the condition expression.</p>
+<p>Go's switch is like the one in C, C++, Java, JavaScript, and PHP, except that Go only runs the selected case, not all the cases that follow. In effect, the break statement that is needed at the end of each case in those languages is provided automatically in Go. Another important difference is that Go's switch cases need not be constants, and the values involved need not be integers.</p>
+<p>1
+package main
+2
+​
+3
+import (
+4
+"fmt"
+5
+"runtime"
+6
+)
+7
+​
+8
+func main() {
+9
+fmt.Print("Go runs on ")
+10
+switch os := runtime.GOOS; os {
+11
+case "darwin":
+12
+fmt.Println("macOS.")
+13
+case "linux":
+14
+fmt.Println("Linux.")
+15
+default:
+16
+// freebsd, openbsd,
+17
+// plan9, windows...
+18
+fmt.Printf("%s.\n", os)
+19
+}
+20
+}
+21
+​</p>
+<p>Switch evaluation order
+Switch cases evaluate cases from top to bottom, stopping when a case succeeds.</p>
+<p>(For example,</p>
+<p>switch i {
+case 0:
+case f():
+}
+does not call f if i==0.)</p>
+<p>Note: Time in the Go playground always appears to start at 2009-11-10 23:00:00 UTC, a value whose significance is left as an exercise for the reader.</p>
+<p>1
+package main
+2
+​
+3
+import (
+4
+"fmt"
+5
+"time"
+6
+)
+7
+​
+8
+func main() {
+9
+fmt.Println("When's Saturday?")
+10
+today := time.Now().Weekday()
+11
+switch time.Saturday {
+12
+case today + 0:
+13
+fmt.Println("Today.")
+14
+case today + 1:
+15
+fmt.Println("Tomorrow.")
+16
+case today + 2:
+17
+fmt.Println("In two days.")
+18
+default:
+19
+fmt.Println("Too far away.")
+20
+}
+21
+}
+22
+​</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Njoxpy/Lenguaje-Go" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

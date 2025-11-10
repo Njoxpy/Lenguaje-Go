@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Godbless Nyagawa" /><link rel="canonical" href="https://example.com/docs/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Godbless Nyagawa" /><link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/docs/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>Docs - My Project Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
@@ -14,7 +14,7 @@
         // Current page data
         var mkdocs_page_name = "Docs";
         var mkdocs_page_input_path = "docs.md";
-        var mkdocs_page_url = "/docs/";
+        var mkdocs_page_url = "/Lenguaje-Go/docs/";
       </script>
     
     <!--[if lt IE 9]>
@@ -67,6 +67,16 @@
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../roadmap/">Roadmap</a>
                 </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Basics (Tour Section 1)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/">Basics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Packages, Variables, Functions (17 parts)</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/">Packages, Variables, Functions (17 parts)</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -155,6 +165,37 @@
 <span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">uint64</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="mi">18446744073709551615</span>
 <span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">complex128</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">i</span><span class="o">)</span>
 </code></pre></div>
+
+<h3 id="zero-values-in-go">Zero Values in Go<a class="headerlink" href="#zero-values-in-go" title="Permanent link">&para;</a></h3>
+<p>In Go, <strong>variables declared without an explicit initial value</strong> are automatically assigned a <strong>zero value</strong>. The zero value depends on the type of the variable:</p>
+<ul>
+<li><strong>Numeric types</strong> → <code>0</code></li>
+<li><strong>Boolean type</strong> → <code>false</code></li>
+<li><strong>String type</strong> → <code>""</code> (empty string)</li>
+</ul>
+<hr />
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span><span class="w">      </span><span class="c1">// zero value is 0</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">float64</span><span class="w">  </span><span class="c1">// zero value is 0</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">bool</span><span class="w">     </span><span class="c1">// zero value is false</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="kt">string</span><span class="w">   </span><span class="c1">// zero value is &quot;&quot;</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v %v %v %q\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Output:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="n">false</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>This feature ensures that all variables in Go always have a <strong>well-defined initial value</strong>, even if you don’t explicitly assign one.</p>
+</blockquote>
               
             </div>
           </div><footer>
