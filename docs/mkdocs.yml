@@ -18,7 +18,7 @@ theme:
     - python
     - rust
   analytics:
-    gtag: G-ABC123 # Replace with your GA4 ID
+    gtag: G-ABC1232e1 # Replace with your GA4 ID
   shortcuts:
     help: 191
     next: 78
@@ -41,6 +41,7 @@ nav:
       - Basics: Welcome & Basics (Tour Section 1)/index.md
   - Packages, Variables, Functions (17 parts):
       - Packages, Variables, Functions (17 parts): Packages, Variables, Functions (17 parts)/index.md
+  - Questions: index.md
 
 # Markdown extensions
 markdown_extensions:
