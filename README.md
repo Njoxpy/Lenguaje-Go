@@ -40,7 +40,9 @@ docs/
 
 ### How to Run
 
-You need [Go installed](https://go.dev/doc/install) (recommended: Go 1.20+).
+- You need [Go installed](https://go.dev/doc/install) (recommended: Go 1.20+).
+
+- [https://go.dev/tour/list](https://go.dev/tour/list)
 
 To run any example:
 

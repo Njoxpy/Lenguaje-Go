@@ -1,0 +1,56 @@
+site_name: My Project Docs
+site_url: https://njoxpy.github.io/Lenguaje-Go/
+site_author: Godbless Nyagawa
+repo_url: https://github.com/Njoxpy/Lenguaje-Go
+repo_name: GitHub
+
+# Theme configuration
+theme:
+  name: readthedocs
+  color_mode: auto
+  user_color_mode_toggle: true
+  nav_style: primary
+  highlightjs: true
+  hljs_style: github
+  hljs_style_dark: github_dark
+  hljs_languages:
+    - yaml
+    - python
+    - rust
+  analytics:
+    gtag: G-ABC123 # Replace with your GA4 ID
+  shortcuts:
+    help: 191
+    next: 78
+    previous: 80
+    search: 83
+  prev_next_buttons_location: bottom
+  navigation_depth: 3
+  collapse_navigation: true
+  titles_only: false
+  sticky_navigation: true
+  locale: en
+
+# Navigation structure including your files
+nav:
+  - Home: index.md
+  - Advice: advice.md
+  - Docs: docs.md
+  - Roadmap: roadmap.md
+  - Welcome & Basics (Tour Section 1):
+      - Basics: Welcome & Basics (Tour Section 1)/index.md
+  - Packages, Variables, Functions (17 parts):
+      - Packages, Variables, Functions (17 parts): Packages, Variables, Functions (17 parts)/index.md
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
