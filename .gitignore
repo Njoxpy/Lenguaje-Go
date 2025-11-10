@@ -1,1 +1,24 @@
-docs/
+
+# MkDocs generated site directory
+site/
+
+# Virtual environment directory (if used)
+.venv/
+venv/
+env/
+myenv/
+
+# Python compiled files
+*.pyc
+__pycache__/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.swp
+*~
+
+
+10-Week Beginner System Design Roadmap (Tanzania Context).pdf
+
+roadmap.md
