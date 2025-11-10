@@ -14,4 +14,6 @@ func main(){
 	fmt.Println(name)
 	fmt.Println("day 1 palying ground golang!")
 	fmt.Println("The time is: ", time.Now())
+
+
 }
