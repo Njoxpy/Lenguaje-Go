@@ -4,30 +4,29 @@ import (
 	"fmt"
 )
 
-func main(){
+func addition(x, y int) int {
+	return x + y
+}
+
+func subtraction(x, y int) int {
+	return x - y
+}
+
+func multiplication(x, y int) int {
+	return x * y
+}
+
+func division(x, y int) int {
+	return x / y
+}
+
+func main() {
 	fmt.Println("Karibu kwenye kikotozi!")
 
-	var namba1 int
-	var namba2 int
-	var jibu int
+	var operation int
 
-	fmt.Printf("Jaza namba ya kwanza: ")
-	fmt.Scan(&namba1)
-
-	fmt.Printf("Jaza namba ya pili: ")
-	fmt.Scan(&namba2)
-
-	jibu = namba1 + namba2
-
-	fmt.Printf("Jibu: %v\n", jibu)
-
-	jibuAfterSub := namba1 - namba2
-	fmt.Printf("Jibu after sub: %v\n", jibuAfterSub)
-
-	jibuAfterMult := namba1 * namba2
-	fmt.Printf("Jibu after multiplication: %v\n", jibuAfterMult)
-
-	jibuAfterDivision := namba1 / namba2
-	fmt.Printf("Jibu after division: %v\n", jibuAfterDivision)
-
+	switch operation {
+	case 1:
+		fmt.Println(addition(12, 12))
+	}
 }
