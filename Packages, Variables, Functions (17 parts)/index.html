@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Godbless Nyagawa" /><link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Packages, Variables, Functions (17 parts) - My Project Docs</title>
+    <title>Overview - My Project Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Packages, Variables, Functions (17 parts)";
+        var mkdocs_page_name = "Overview";
         var mkdocs_page_input_path = "Packages, Variables, Functions (17 parts)/index.md";
         var mkdocs_page_url = "/Lenguaje-Go/Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/";
       </script>
@@ -68,21 +68,27 @@
               </ul>
               <p class="caption"><span class="caption-text">Welcome & Basics (Tour Section 1)</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/">Basics</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/">Overview</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Packages, Variables, Functions (17 parts)</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Packages, Variables, Functions (17 parts)</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#example">Example:</a>
     </li>
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Flow Control Statements</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../controlflowstatements/">Overview</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Questions</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../questions/">Overview</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -99,7 +105,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Packages, Variables, Functions (17 parts)</li>
-      <li class="breadcrumb-item active">Packages, Variables, Functions (17 parts)</li>
+      <li class="breadcrumb-item active">Overview</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/Njoxpy/Lenguaje-Go/edit/master/docs/Packages, Variables, Functions (17 parts)/index.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -194,12 +200,311 @@ Unexported names (those starting with a lowercase letter) are <strong>not access
 <span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">Pi</span><span class="p">)</span><span class="w"> </span><span class="c1">// Works correctly</span>
 <span class="p">}</span>
 </code></pre></div>
+
+<h1 id="go-language-basics"><strong>Go Language Basics</strong><a class="headerlink" href="#go-language-basics" title="Permanent link">&para;</a></h1>
+<h2 id="functions"><strong>Functions</strong><a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<p>A <strong>function</strong> in Go can take zero or more arguments.</p>
+<p>In the following example, the <code>add</code> function takes two parameters of type <code>int</code>.
+Notice that the type is written <strong>after</strong> the variable name.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="functions-continued"><strong>Functions (continued)</strong><a class="headerlink" href="#functions-continued" title="Permanent link">&para;</a></h2>
+<p>When two or more consecutive parameters share a type, you can omit the type from all but the last.
+For example, instead of writing:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span>
+</code></pre></div>
+
+<p>you can write:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="multiple-results"><strong>Multiple Results</strong><a class="headerlink" href="#multiple-results" title="Permanent link">&para;</a></h2>
+<p>A function can return <strong>multiple values</strong>.
+Here, the <code>swap</code> function returns two strings.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">swap</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">swap</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="named-return-values"><strong>Named Return Values</strong><a class="headerlink" href="#named-return-values" title="Permanent link">&para;</a></h2>
+<p>Go allows you to name return values. These are treated as variables defined at the top of the function.
+A <strong>naked return</strong> statement (without arguments) returns these named values automatically.</p>
+<p><strong>Note:</strong> Naked returns should be used only in short, simple functions to preserve readability.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">split</span><span class="p">(</span><span class="nx">sum</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">9</span>
+<span class="w">    </span><span class="nx">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">x</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">split</span><span class="p">(</span><span class="mi">17</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="variables"><strong>Variables</strong><a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>The <code>var</code> statement declares a list of variables, with the <strong>type coming last</strong>.</p>
+<p>A <code>var</code> declaration can appear at both package and function level.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">python</span><span class="p">,</span><span class="w"> </span><span class="nx">java</span><span class="w"> </span><span class="kt">bool</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">python</span><span class="p">,</span><span class="w"> </span><span class="nx">java</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="variables-with-initializers"><strong>Variables with Initializers</strong><a class="headerlink" href="#variables-with-initializers" title="Permanent link">&para;</a></h2>
+<p>A <code>var</code> declaration can include <strong>initializers</strong>.
+If an initializer is provided, the type can be omitted since it will be inferred from the value.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">python</span><span class="p">,</span><span class="w"> </span><span class="nx">java</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;no!&quot;</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">python</span><span class="p">,</span><span class="w"> </span><span class="nx">java</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="short-variable-declarations"><strong>Short Variable Declarations</strong><a class="headerlink" href="#short-variable-declarations" title="Permanent link">&para;</a></h2>
+<p>Inside a function, you can use the shorthand <code>:=</code> to declare and initialize variables.</p>
+<p>Outside functions, <code>:=</code> cannot be used because all statements must start with a keyword (like <code>var</code> or <code>func</code>).</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="nx">k</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">python</span><span class="p">,</span><span class="w"> </span><span class="nx">java</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;no!&quot;</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">,</span><span class="w"> </span><span class="nx">k</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="nx">python</span><span class="p">,</span><span class="w"> </span><span class="nx">java</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="basic-types"><strong>Basic Types</strong><a class="headerlink" href="#basic-types" title="Permanent link">&para;</a></h2>
+<p>Go’s basic data types include:</p>
+<ul>
+<li><code>bool</code></li>
+<li><code>string</code></li>
+<li>
+<p>Numeric types:</p>
+</li>
+<li>
+<p>Signed integers: <code>int</code>, <code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code></p>
+</li>
+<li>Unsigned integers: <code>uint</code>, <code>uint8</code>, <code>uint16</code>, <code>uint32</code>, <code>uint64</code>, <code>uintptr</code></li>
+<li>Aliases: <code>byte</code> (for <code>uint8</code>), <code>rune</code> (for <code>int32</code>, representing Unicode code points)</li>
+<li>Floating point: <code>float32</code>, <code>float64</code></li>
+<li>Complex numbers: <code>complex64</code>, <code>complex128</code></li>
+</ul>
+<p>Typically, <code>int</code>, <code>uint</code>, and <code>uintptr</code> are 32 bits on 32-bit systems and 64 bits on 64-bit systems.
+Use <code>int</code> unless you have a specific reason to choose another type.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">&quot;math/cmplx&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">ToBe</span><span class="w">   </span><span class="kt">bool</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="nx">MaxInt</span><span class="w"> </span><span class="kt">uint64</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">64</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="nx">z</span><span class="w">      </span><span class="kt">complex128</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cmplx</span><span class="p">.</span><span class="nx">Sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">12i</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Type: %T Value: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ToBe</span><span class="p">,</span><span class="w"> </span><span class="nx">ToBe</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Type: %T Value: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">MaxInt</span><span class="p">,</span><span class="w"> </span><span class="nx">MaxInt</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Type: %T Value: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="zero-values"><strong>Zero Values</strong><a class="headerlink" href="#zero-values" title="Permanent link">&para;</a></h2>
+<p>Variables declared without an explicit initializer are assigned their <strong>zero value</strong>:</p>
+<ul>
+<li><code>0</code> for numeric types</li>
+<li><code>false</code> for booleans</li>
+<li><code>""</code> (empty string) for strings</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">float64</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">bool</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v %v %v %q\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="type-conversions"><strong>Type Conversions</strong><a class="headerlink" href="#type-conversions" title="Permanent link">&para;</a></h2>
+<p>Use <code>T(v)</code> to convert the value <code>v</code> to type <code>T</code>.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">42</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">float64</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">uint</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Or, more simply:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">42</span>
+<span class="nx">f</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">float64</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="nx">u</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">uint</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Unlike C, Go <strong>requires explicit type conversions</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+<span class="w">    </span><span class="s">&quot;math&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">Sqrt</span><span class="p">(</span><span class="nb">float64</span><span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="o">*</span><span class="nx">y</span><span class="p">))</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">uint</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="type-inference"><strong>Type Inference</strong><a class="headerlink" href="#type-inference" title="Permanent link">&para;</a></h2>
+<p>If you declare a variable without specifying its type (using <code>:=</code> or <code>var =</code>), Go infers the type from the value.</p>
+<ul>
+<li>When the value has a type, the new variable takes that type.</li>
+<li>When the value is an <strong>untyped constant</strong>, Go assigns a suitable default type.</li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span>
+<span class="nx">j</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="c1">// j is an int</span>
+
+<span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">42</span><span class="w">           </span><span class="c1">// int</span>
+<span class="nx">f</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">3.142</span><span class="w">        </span><span class="c1">// float64</span>
+<span class="nx">g</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">0.867</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">0.5i</span><span class="w"> </span><span class="c1">// complex128</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="c1">// change me!</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;v is of type %T\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="constants"><strong>Constants</strong><a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<p>Constants are declared like variables, but with the <code>const</code> keyword.
+They can be character, string, boolean, or numeric values.
+You <strong>cannot</strong> use <code>:=</code> for constants.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Pi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">3.14</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;世界&quot;</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">World</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Happy&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Pi</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Day&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">Truth</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Go rules?&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Truth</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="numeric-constants"><strong>Numeric Constants</strong><a class="headerlink" href="#numeric-constants" title="Permanent link">&para;</a></h2>
+<p>Numeric constants are <strong>high-precision</strong> values.
+An untyped constant takes on the type required by its context.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// Create a huge number by shifting 1 left 100 places (1 followed by 100 zeroes)</span>
+<span class="w">    </span><span class="nx">Big</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">    </span><span class="c1">// Shift it right again by 99, resulting in 1&lt;&lt;1 or 2</span>
+<span class="w">    </span><span class="nx">Small</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Big</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">99</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">needInt</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="o">*</span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">needFloat</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="kt">float64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">needInt</span><span class="p">(</span><span class="nx">Small</span><span class="p">))</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">needFloat</span><span class="p">(</span><span class="nx">Small</span><span class="p">))</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">needFloat</span><span class="p">(</span><span class="nx">Big</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="congratulations"><strong>🎉 Congratulations!</strong><a class="headerlink" href="#congratulations" title="Permanent link">&para;</a></h2>
+<p>You’ve completed this Go basics module.
+You can now proceed to the next lesson or review previous ones to strengthen your understanding.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="btn btn-neutral float-left" title="Basics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href=".." class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../controlflowstatements/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -229,7 +534,7 @@ Unexported names (those starting with a lowercase letter) are <strong>not access
       <span><a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href=".." style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../controlflowstatements/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

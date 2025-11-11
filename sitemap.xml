@@ -2,34 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/</loc>
-         <lastmod>2025-11-10</lastmod>
-    </url>
-    <url>
-         <loc>https://njoxpy.github.io/Lenguaje-Go/Flow%20control%20statements%3A%20for%2C%20if%2C%20else%2C%20switch%20and%20defer/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/advice/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/docs/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/roadmap/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/Welcome%20%26%20Basics%20%28Tour%20Section%201%29/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
+    </url>
+    <url>
+         <loc>https://njoxpy.github.io/Lenguaje-Go/controlflowstatements/</loc>
+         <lastmod>2025-11-11</lastmod>
     </url>
     <url>
          <loc>https://njoxpy.github.io/Lenguaje-Go/questions/</loc>
-         <lastmod>2025-11-10</lastmod>
+         <lastmod>2025-11-11</lastmod>
     </url>
 </urlset>
