@@ -37,11 +37,18 @@ nav:
   - Advice: advice.md
   - Docs: docs.md
   - Roadmap: roadmap.md
+
   - Welcome & Basics (Tour Section 1):
-      - Basics: Welcome & Basics (Tour Section 1)/index.md
+      - Overview: "Welcome & Basics (Tour Section 1)/index.md"
+
   - Packages, Variables, Functions (17 parts):
-      - Packages, Variables, Functions (17 parts): Packages, Variables, Functions (17 parts)/index.md
-  - Questions: index.md
+      - Overview: "Packages, Variables, Functions (17 parts)/index.md"
+
+  - Flow Control Statements:
+      - Overview: controlflowstatements/index.md
+
+  - Questions:
+      - Overview: "questions/index.md"
 
 # Markdown extensions
 markdown_extensions:
