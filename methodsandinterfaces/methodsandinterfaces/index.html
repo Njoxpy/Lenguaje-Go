@@ -10,25 +10,25 @@
         <meta name="author" content="Godbless Nyagawa">
       
       
-        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/advice/">
+        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/methodsandinterfaces/methodsandinterfaces/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../../moretypes/slices/">
       
       
-        <link rel="next" href="../docs/">
+        <link rel="next" href="../../questions/questions/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Advice - My Project Docs</title>
+        <title>Methods - My Project Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -47,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#1-what-are-methods-in-go" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+    <a href="../.." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advice
+              Methods
             
           </span>
         </div>
@@ -192,7 +192,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+    <a href="../.." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -241,30 +241,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Advice
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../advice/" class="md-nav__link">
         
   
   
@@ -275,75 +255,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      NOTE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#golang-learning-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang Learning Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Golang Learning Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recommended-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -355,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   
@@ -377,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+      <a href="../../roadmap/" class="md-nav__link">
         
   
   
@@ -437,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
+      <a href="../../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
         
   
   
@@ -505,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
+      <a href="../../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
         
   
   
@@ -573,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../controlflowstatements/" class="md-nav__link">
+      <a href="../../controlflowstatements/" class="md-nav__link">
         
   
   
@@ -600,18 +511,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -627,7 +540,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             More Types
@@ -641,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/" class="md-nav__link">
+      <a href="../../moretypes/" class="md-nav__link">
         
   
   
@@ -664,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/map/" class="md-nav__link">
+      <a href="../../moretypes/map/" class="md-nav__link">
         
   
   
@@ -687,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/functions/" class="md-nav__link">
+      <a href="../../moretypes/functions/" class="md-nav__link">
         
   
   
@@ -710,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/slices/" class="md-nav__link">
+      <a href="../../moretypes/slices/" class="md-nav__link">
         
   
   
@@ -730,10 +643,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Methods
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -744,6 +679,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-basic-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example — Basic Method
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -801,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/questions/" class="md-nav__link">
+      <a href="../../questions/questions/" class="md-nav__link">
         
   
   
@@ -824,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/" class="md-nav__link">
+      <a href="../../questions/" class="md-nav__link">
         
   
   
@@ -892,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/projects/" class="md-nav__link">
+      <a href="../../projects/projects/" class="md-nav__link">
         
   
   
@@ -932,6 +896,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -940,53 +906,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
+  <a href="#example-basic-method" class="md-nav__link">
     <span class="md-ellipsis">
-      Golang
+      Example — Basic Method
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      NOTE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#golang-learning-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang Learning Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Golang Learning Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recommended-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1009,44 +933,240 @@
   
 
 
-<h2 id="golang">Golang<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h2>
+<h1 id="1-what-are-methods-in-go">1. What are Methods in Go?<a class="headerlink" href="#1-what-are-methods-in-go" title="Permanent link">&para;</a></h1>
+<p>In Go, a <strong>method</strong> is a <strong>function with a receiver</strong>. The receiver can be:</p>
 <ul>
-<li>start with golang tour https://go.dev/tour/welcome/1</li>
-<li>for api development use the alex edwards api dev side.</li>
+<li><strong>Value receiver</strong>: method works on a <strong>copy</strong> of the struct</li>
+<li><strong>Pointer receiver</strong>: method works on the <strong>original struct</strong></li>
 </ul>
-<h2 id="note">NOTE<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+<p>Syntax:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">receiver</span><span class="w"> </span><span class="nx">Type</span><span class="p">)</span><span class="w"> </span><span class="nx">MethodName</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span><span class="w"> </span><span class="nx">returnType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// code</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <ul>
-<li>Dedicate 1 hour to 2 hours a day.type everthing.</li>
-<li>Disable copilot or any AI stuffs unless you want them to teach you or explain further.Here’s a more <strong>documentation-style version</strong> of your text:</li>
+<li><code>receiver</code> is usually a variable representing the struct instance.</li>
+<li><code>Type</code> is the struct type (or any custom type).</li>
 </ul>
 <hr />
-<h1 id="golang-learning-guide">Golang Learning Guide<a class="headerlink" href="#golang-learning-guide" title="Permanent link">&para;</a></h1>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="example-basic-method">Example — Basic Method<a class="headerlink" href="#example-basic-method" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Age</span><span class="w">  </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="c1">// Value receiver</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="nx">Greet</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Name</span>
+<span class="p">}</span>
+
+<span class="c1">// Pointer receiver</span>
+<span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="nx">HaveBirthday</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">u</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">user</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Age</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Greet</span><span class="p">())</span><span class="w"> </span><span class="c1">// Hello, Alice</span>
+
+<span class="w">    </span><span class="nx">user</span><span class="p">.</span><span class="nx">HaveBirthday</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w">     </span><span class="c1">// 26</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Value receiver: <code>Greet()</code> does not modify <code>user</code></li>
+<li>Pointer receiver: <code>HaveBirthday()</code> <strong>modifies the original struct</strong></li>
+</ul>
+<hr />
+<h1 id="2-real-world-uses-of-methods">2. Real-World Uses of Methods<a class="headerlink" href="#2-real-world-uses-of-methods" title="Permanent link">&para;</a></h1>
+<p>Methods are extremely useful because they <strong>associate behavior with data</strong>. This is similar to OOP, but Go keeps it simple.</p>
+<h3 id="examples-in-real-projects">Examples in real projects:<a class="headerlink" href="#examples-in-real-projects" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Complete the <strong>Go Tour</strong>: <a href="https://go.dev/tour/welcome/1">https://go.dev/tour/welcome/1</a></p>
+<p><strong>Backend / Business Logic</strong></p>
 </li>
 <li>
-<p>Provides a comprehensive introduction to Go’s basics and core concepts.</p>
+<p>User management: <code>user.ResetPassword()</code>, <code>user.IsActive()</code></p>
+</li>
+<li>Banking system: <code>account.Deposit()</code>, <code>account.Withdraw()</code></li>
+<li>
+<p>Inventory system: <code>product.IncreaseStock(amount)</code></p>
 </li>
 <li>
-<p>For <strong>API Development</strong>, follow <strong>Alex Edwards’ Go API development tutorials</strong>.</p>
+<p><strong>Encapsulation</strong></p>
 </li>
 <li>
-<p>Focuses on practical, real-world API building in Go.</p>
+<p>Struct fields can be private (<code>lowercase</code>) and methods control access:</p>
+<p>```go
+ type Account struct {
+     balance int
+ }</p>
+<p>func (a *Account) Deposit(amount int) {
+     if amount &gt; 0 {
+         a.balance += amount
+     }
+ }</p>
+<p>func (a *Account) Balance() int {
+     return a.balance
+ }
+ ```</p>
+</li>
+<li>
+<p><strong>Stateful Closures</strong></p>
+</li>
+<li>
+<p>Methods can return closures that capture struct state:</p>
+<p><code>go
+ func (a *Account) TransactionLogger() func(amount int) int {
+     return func(amount int) int {
+         a.balance += amount
+         return a.balance
+     }
+ }</code></p>
+</li>
+<li>
+<p><strong>Collections of Methods</strong></p>
+</li>
+<li>
+<p>Methods allow struct-based APIs in backend projects:</p>
+<ul>
+<li><code>Cart.AddItem()</code>, <code>Cart.RemoveItem()</code>, <code>Cart.Total()</code></li>
+<li>Makes code more readable and maintainable.</li>
+</ul>
 </li>
 </ol>
-<h2 id="recommended-practices">Recommended Practices<a class="headerlink" href="#recommended-practices" title="Permanent link">&para;</a></h2>
+<hr />
+<h1 id="3-importance-of-methods-in-backend-projects">3. Importance of Methods in Backend Projects<a class="headerlink" href="#3-importance-of-methods-in-backend-projects" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p><strong>Organization of code</strong></p>
+</li>
+<li>
+<p>Methods tie <strong>data + behavior together</strong>, reducing global state</p>
+</li>
+<li>
+<p>Easier to maintain and test</p>
+</li>
+<li>
+<p><strong>Encapsulation and Safety</strong></p>
+</li>
+<li>
+<p>Pointer receivers allow controlled mutation of structs</p>
+</li>
+<li>
+<p>Fields can remain private, exposed via methods only</p>
+</li>
+<li>
+<p><strong>Reusability</strong></p>
+</li>
+<li>
+<p>One method can be used across the backend wherever that struct is used</p>
+</li>
+<li>
+<p><strong>Readability</strong></p>
+</li>
+<li>
+<p>Instead of <code>UpdateUserAge(&amp;user, 25)</code>, you write <code>user.UpdateAge(25)</code> — more intuitive</p>
+</li>
+<li>
+<p><strong>Testing</strong></p>
+</li>
+<li>
+<p>Methods can be tested independently</p>
+</li>
+<li>You can combine methods with closures for stateful testing</li>
+</ol>
+<hr />
+<h1 id="4-disadvantages-things-to-watch-out-for">4. Disadvantages / Things to Watch Out For<a class="headerlink" href="#4-disadvantages-things-to-watch-out-for" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p><strong>Copying large structs</strong></p>
+</li>
+<li>
+<p>Using value receivers on large structs <strong>copies the whole struct</strong>, which is inefficient</p>
+</li>
+<li>
+<p>Solution: use pointer receivers for large structs</p>
+</li>
+<li>
+<p><strong>Mixing pointer and value receivers</strong></p>
+</li>
+<li>
+<p>Can lead to confusion</p>
+</li>
+<li>
+<p>Rule of thumb: use pointer receiver if method <strong>modifies the struct</strong> or the struct is large; otherwise, value receiver is fine</p>
+</li>
+<li>
+<p><strong>Interface complexity</strong></p>
+</li>
+<li>
+<p>Too many small methods can lead to large interfaces</p>
+</li>
+<li>
+<p>Keep interfaces minimal (Go encourages small, composable interfaces)</p>
+</li>
+<li>
+<p><strong>Concurrent access</strong></p>
+</li>
+<li>
+<p>Methods do <strong>not automatically handle concurrency</strong></p>
+</li>
+<li>If multiple goroutines call pointer-receiver methods that mutate the struct, you must use <code>sync.Mutex</code> or <code>sync.RWMutex</code></li>
+</ol>
+<hr />
+<h1 id="5-summary">5. Summary<a class="headerlink" href="#5-summary" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Value Receiver</th>
+<th>Pointer Receiver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modifies original struct</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Struct copying cost</td>
+<td>Copies entire struct</td>
+<td>No copy, uses pointer</td>
+</tr>
+<tr>
+<td>Use case</td>
+<td>Read-only methods</td>
+<td>Methods that mutate or large struct</td>
+</tr>
+<tr>
+<td>Safety in concurrency</td>
+<td>Same as pointer (must lock if needed)</td>
+<td>Same, must lock for safety</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Backend importance:</strong></p>
 <ul>
-<li><strong>Daily Practice:</strong> Allocate 1–2 hours each day to coding exercises.</li>
-<li><strong>Manual Typing:</strong> Type all code manually to reinforce learning and retention.</li>
-<li><strong>AI Tools:</strong> Disable Copilot or other AI assistants unless used explicitly for explanations or clarifications.</li>
+<li>Methods are core to building maintainable, encapsulated, and testable business logic.</li>
+<li>They reduce global state and allow you to write reusable APIs.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
-
-<span class="c1"># Activate the virtual environment</span>
-<span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-</code></pre></div>
+<hr />
+<p>If you want, I can <strong>give a set of step-by-step method exercises</strong> that include:</p>
+<ul>
+<li>Value vs pointer receiver</li>
+<li>Methods returning closures</li>
+<li>Using methods in mini backend-style structs like <code>User</code>, <code>Account</code>, <code>Cart</code></li>
+</ul>
 
 
 
@@ -1095,10 +1215,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

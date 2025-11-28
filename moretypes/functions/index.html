@@ -10,25 +10,25 @@
         <meta name="author" content="Godbless Nyagawa">
       
       
-        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/docs/">
+        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/moretypes/functions/">
       
       
-        <link rel="prev" href="../advice/">
+        <link rel="prev" href="../map/">
       
       
-        <link rel="next" href="../roadmap/">
+        <link rel="next" href="../slices/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Docs - My Project Docs</title>
+        <title>Functions - My Project Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -47,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-types-in-go" class="md-skip">
+        <a href="#1-function-values" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+    <a href="../.." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docs
+              Functions
             
           </span>
         </div>
@@ -192,7 +192,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+    <a href="../.." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -244,7 +244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advice/" class="md-nav__link">
+      <a href="../../advice/" class="md-nav__link">
         
   
   
@@ -263,30 +263,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Docs
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../docs/" class="md-nav__link">
         
   
   
@@ -297,42 +277,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-types-in-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Types in Go
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zero-values-in-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zero Values in Go
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -344,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+      <a href="../../roadmap/" class="md-nav__link">
         
   
   
@@ -404,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
+      <a href="../../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
         
   
   
@@ -472,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
+      <a href="../../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
         
   
   
@@ -540,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../controlflowstatements/" class="md-nav__link">
+      <a href="../../controlflowstatements/" class="md-nav__link">
         
   
   
@@ -567,18 +511,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -594,7 +540,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             More Types
@@ -608,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -631,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/map/" class="md-nav__link">
+      <a href="../map/" class="md-nav__link">
         
   
   
@@ -651,10 +597,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../moretypes/functions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -665,6 +633,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-assigning-a-function-to-a-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1 — Assigning a function to a variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-passing-a-function-as-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2 — Passing a function as argument
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -677,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/slices/" class="md-nav__link">
+      <a href="../slices/" class="md-nav__link">
         
   
   
@@ -700,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
+      <a href="../../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
         
   
   
@@ -768,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/questions/" class="md-nav__link">
+      <a href="../../questions/questions/" class="md-nav__link">
         
   
   
@@ -791,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/" class="md-nav__link">
+      <a href="../../questions/" class="md-nav__link">
         
   
   
@@ -859,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/projects/" class="md-nav__link">
+      <a href="../../projects/projects/" class="md-nav__link">
         
   
   
@@ -899,6 +905,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -907,18 +915,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-types-in-go" class="md-nav__link">
+  <a href="#example-1-assigning-a-function-to-a-variable" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Types in Go
+      Example 1 — Assigning a function to a variable
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#zero-values-in-go" class="md-nav__link">
+  <a href="#example-2-passing-a-function-as-argument" class="md-nav__link">
     <span class="md-ellipsis">
-      Zero Values in Go
+      Example 2 — Passing a function as argument
     </span>
   </a>
   
@@ -943,102 +951,139 @@
   
 
 
-  <h1>Docs</h1>
-
-<h3 id="basic-types-in-go">Basic Types in Go<a class="headerlink" href="#basic-types-in-go" title="Permanent link">&para;</a></h3>
-<p>Go provides a set of <strong>basic types</strong> that are commonly used in programs:</p>
+<h1 id="1-function-values">1. Function Values<a class="headerlink" href="#1-function-values" title="Permanent link">&para;</a></h1>
+<p>In Go, <strong>functions are first-class citizens</strong>, meaning you can:</p>
 <ul>
-<li>
-<p><strong>Boolean:</strong>
-  <code>bool</code></p>
-</li>
-<li>
-<p><strong>Strings:</strong>
-  <code>string</code></p>
-</li>
-<li>
-<p><strong>Signed integers:</strong>
-  <code>int</code>, <code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code></p>
-</li>
-<li>
-<p><strong>Unsigned integers:</strong>
-  <code>uint</code>, <code>uint8</code>, <code>uint16</code>, <code>uint32</code>, <code>uint64</code>, <code>uintptr</code></p>
-</li>
-<li>
-<p><strong>Aliases:</strong>
-  <code>byte</code> → alias for <code>uint8</code>
-  <code>rune</code> → alias for <code>int32</code> (represents a Unicode code point)</p>
-</li>
-<li>
-<p><strong>Floating-point numbers:</strong>
-  <code>float32</code>, <code>float64</code></p>
-</li>
-<li>
-<p><strong>Complex numbers:</strong>
-  <code>complex64</code>, <code>complex128</code></p>
-</li>
+<li>Assign functions to variables</li>
+<li>Pass functions as arguments</li>
+<li>Return functions from other functions</li>
 </ul>
 <hr />
-<p>The following example demonstrates variables of various types. It also shows how variable declarations can be <strong>grouped together</strong> in a block, similar to how imports are grouped.</p>
-<blockquote>
-<p><strong>Note:</strong> The types <code>int</code>, <code>uint</code>, and <code>uintptr</code> are typically <strong>32 bits</strong> on 32-bit systems and <strong>64 bits</strong> on 64-bit systems. Use <code>int</code> for general-purpose integers unless you have a specific reason to choose a fixed-size or unsigned integer.</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="s">&quot;fmt&quot;</span>
-<span class="w">    </span><span class="s">&quot;math/cmplx&quot;</span>
-<span class="p">)</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="nx">ToBe</span><span class="w">   </span><span class="kt">bool</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span>
-<span class="w">    </span><span class="nx">MaxInt</span><span class="w"> </span><span class="kt">uint64</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">64</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="nx">z</span><span class="w">      </span><span class="kt">complex128</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cmplx</span><span class="p">.</span><span class="nx">Sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">12i</span><span class="p">)</span>
-<span class="p">)</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Type: %T Value: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ToBe</span><span class="p">,</span><span class="w"> </span><span class="nx">ToBe</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Type: %T Value: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">MaxInt</span><span class="p">,</span><span class="w"> </span><span class="nx">MaxInt</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Type: %T Value: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p><strong>Output example:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">uint64</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="mi">18446744073709551615</span>
-<span class="n">Type</span><span class="o">:</span><span class="w"> </span><span class="n">complex128</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">i</span><span class="o">)</span>
-</code></pre></div>
-
-<h3 id="zero-values-in-go">Zero Values in Go<a class="headerlink" href="#zero-values-in-go" title="Permanent link">&para;</a></h3>
-<p>In Go, <strong>variables declared without an explicit initial value</strong> are automatically assigned a <strong>zero value</strong>. The zero value depends on the type of the variable:</p>
-<ul>
-<li><strong>Numeric types</strong> → <code>0</code></li>
-<li><strong>Boolean type</strong> → <code>false</code></li>
-<li><strong>String type</strong> → <code>""</code> (empty string)</li>
-</ul>
-<hr />
-<p><strong>Example:</strong></p>
+<h3 id="example-1-assigning-a-function-to-a-variable">Example 1 — Assigning a function to a variable<a class="headerlink" href="#example-1-assigning-a-function-to-a-variable" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="kt">int</span><span class="w">      </span><span class="c1">// zero value is 0</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kt">float64</span><span class="w">  </span><span class="c1">// zero value is 0</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">bool</span><span class="w">     </span><span class="c1">// zero value is false</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="kt">string</span><span class="w">   </span><span class="c1">// zero value is &quot;&quot;</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
+<span class="p">}</span>
 
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v %v %v %q\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="p">)</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w">  </span><span class="c1">// declare a variable of function type</span>
+<span class="w">    </span><span class="nx">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">add</span><span class="w">                    </span><span class="c1">// assign function to variable</span>
+<span class="w">    </span><span class="nx">result</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w">        </span><span class="c1">// 7</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<p><strong>Output:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="n">false</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<p><strong>Use case:</strong> Dynamic behavior selection, callbacks, or strategy patterns.</p>
+<hr />
+<h3 id="example-2-passing-a-function-as-argument">Example 2 — Passing a function as argument<a class="headerlink" href="#example-2-passing-a-function-as-argument" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">apply</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="nx">op</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">op</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">product</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">apply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nx">sum</span><span class="p">))</span><span class="w">     </span><span class="c1">// 7</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">apply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nx">product</span><span class="p">))</span><span class="w"> </span><span class="c1">// 12</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<blockquote>
-<p>This feature ensures that all variables in Go always have a <strong>well-defined initial value</strong>, even if you don’t explicitly assign one.</p>
-</blockquote>
+<p><strong>Use case:</strong> Higher-order functions, reusable computation logic.</p>
+<hr />
+<h1 id="2-function-closures">2. Function Closures<a class="headerlink" href="#2-function-closures" title="Permanent link">&para;</a></h1>
+<p>A <strong>closure</strong> is a function that <strong>captures variables from its surrounding scope</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">adder</span><span class="p">()</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">x</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">sum</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">posSum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">adder</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">posSum</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">posSum</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">posSum</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">// 6</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>The returned function <strong>remembers <code>sum</code></strong> even after <code>adder()</code> has finished.</li>
+<li>Closures are useful for maintaining state between calls without global variables.</li>
+</ul>
+<p><strong>Use case:</strong> Counters, memoization, event handlers.</p>
+<hr />
+<h1 id="step-by-step-quizzes">Step-by-step quizzes<a class="headerlink" href="#step-by-step-quizzes" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="beginner">Beginner<a class="headerlink" href="#beginner" title="Permanent link">&para;</a></h2>
+<h3 id="quiz-1-function-value-assignment">Quiz 1 — Function value assignment<a class="headerlink" href="#quiz-1-function-value-assignment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a function <code>greet(name string) string</code> that returns <code>"Hello, &lt;name&gt;"</code>.</li>
+<li>Assign it to a variable <code>f</code> and call <code>f("Alice")</code>.</li>
+<li>Print the result.</li>
+</ol>
+<p><strong>Use case:</strong> Simple dynamic greetings or callback examples.</p>
+<hr />
+<h3 id="quiz-2-function-as-argument">Quiz 2 — Function as argument<a class="headerlink" href="#quiz-2-function-as-argument" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write two functions: <code>square(n int) int</code> and <code>cube(n int) int</code>.</li>
+<li>Write a higher-order function <code>compute(n int, fn func(int) int) int</code> that applies <code>fn</code> to <code>n</code>.</li>
+<li>Test <code>compute(3, square)</code> and <code>compute(2, cube)</code>.</li>
+</ol>
+<p><strong>Use case:</strong> Dynamic computation pipelines, reusable processing.</p>
+<hr />
+<h2 id="intermediate">Intermediate<a class="headerlink" href="#intermediate" title="Permanent link">&para;</a></h2>
+<h3 id="quiz-3-closure-as-counter">Quiz 3 — Closure as counter<a class="headerlink" href="#quiz-3-closure-as-counter" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a function <code>counter()</code> that returns a closure <code>func() int</code> which increments and returns a number every time it’s called.</li>
+<li>Create two counters <code>c1</code> and <code>c2</code> and show they maintain separate counts.</li>
+</ol>
+<p><strong>Use case:</strong> Unique ID generators, counters in a package.</p>
+<hr />
+<h3 id="quiz-4-accumulator">Quiz 4 — Accumulator<a class="headerlink" href="#quiz-4-accumulator" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a function <code>accumulator(start int)</code> that returns a closure <code>func(int) int</code>.</li>
+<li>Each call of the closure adds the argument to a running total starting from <code>start</code>.</li>
+<li>Test with a few numbers.</li>
+</ol>
+<p><strong>Use case:</strong> Financial transactions or running totals in a program.</p>
+<hr />
+<h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
+<h3 id="quiz-5-memoization-with-closure">Quiz 5 — Memoization with closure<a class="headerlink" href="#quiz-5-memoization-with-closure" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a function <code>FibMemo()</code> that returns a closure <code>func(n int) int</code>.</li>
+<li>The closure calculates Fibonacci numbers and stores previously calculated results in a map.</li>
+<li>Test <code>FibMemo()(10)</code> and observe speed improvements on repeated calls.</li>
+</ol>
+<p><strong>Use case:</strong> Optimize expensive recursive calculations dynamically.</p>
+<hr />
+<h3 id="quiz-6-function-returning-different-operations">Quiz 6 — Function returning different operations<a class="headerlink" href="#quiz-6-function-returning-different-operations" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a function <code>operation(op string) func(int, int) int</code> which returns a closure performing addition, subtraction, multiplication, or division depending on <code>op</code>.</li>
+<li>Test <code>operation("add")(3, 5)</code> and <code>operation("mul")(2, 4)</code>.</li>
+</ol>
+<p><strong>Use case:</strong> Dynamic command processing or calculator design.</p>
+<hr />
+<h3 id="quiz-7-stateful-event-handlers">Quiz 7 — Stateful event handlers<a class="headerlink" href="#quiz-7-stateful-event-handlers" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a closure <code>logger(prefix string)</code> that returns <code>func(msg string)</code> and prints <code>"[prefix] msg"</code> every time it’s called.</li>
+<li>Create two loggers <code>infoLogger</code> and <code>errorLogger</code> with different prefixes.</li>
+<li>Call them with messages and observe how each keeps its prefix.</li>
+</ol>
+<p><strong>Use case:</strong> Logging system with different contexts.</p>
+<hr />
+<h1 id="key-notes">Key notes<a class="headerlink" href="#key-notes" title="Permanent link">&para;</a></h1>
+<ol>
+<li>Function values can be stored, passed, or returned like any other variable.</li>
+<li>Closures <strong>capture the surrounding environment</strong>.</li>
+<li>Use closures for <strong>stateful functions</strong> without global variables.</li>
+<li>Higher-order functions make your code flexible and reusable.</li>
+</ol>
 
 
 
@@ -1087,10 +1132,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

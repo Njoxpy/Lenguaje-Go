@@ -10,25 +10,21 @@
         <meta name="author" content="Godbless Nyagawa">
       
       
-        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/advice/">
+        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/gotests/notes/">
       
       
-        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../docs/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Advice - My Project Docs</title>
+        <title>Notes - My Project Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -47,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#1-test-naming-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+    <a href="../.." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advice
+              Notes
             
           </span>
         </div>
@@ -192,7 +188,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+    <a href="../.." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,7 +218,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -241,30 +237,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Advice
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../advice/" class="md-nav__link">
         
   
   
@@ -275,75 +251,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      NOTE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#golang-learning-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang Learning Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Golang Learning Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recommended-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -355,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/" class="md-nav__link">
+      <a href="../../docs/" class="md-nav__link">
         
   
   
@@ -377,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+      <a href="../../roadmap/" class="md-nav__link">
         
   
   
@@ -437,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
+      <a href="../../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
         
   
   
@@ -505,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
+      <a href="../../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
         
   
   
@@ -573,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../controlflowstatements/" class="md-nav__link">
+      <a href="../../controlflowstatements/" class="md-nav__link">
         
   
   
@@ -641,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/" class="md-nav__link">
+      <a href="../../moretypes/" class="md-nav__link">
         
   
   
@@ -664,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/map/" class="md-nav__link">
+      <a href="../../moretypes/map/" class="md-nav__link">
         
   
   
@@ -687,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/functions/" class="md-nav__link">
+      <a href="../../moretypes/functions/" class="md-nav__link">
         
   
   
@@ -710,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/slices/" class="md-nav__link">
+      <a href="../../moretypes/slices/" class="md-nav__link">
         
   
   
@@ -733,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
+      <a href="../../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
         
   
   
@@ -801,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/questions/" class="md-nav__link">
+      <a href="../../questions/questions/" class="md-nav__link">
         
   
   
@@ -824,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/" class="md-nav__link">
+      <a href="../../questions/" class="md-nav__link">
         
   
   
@@ -892,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/projects/" class="md-nav__link">
+      <a href="../../projects/projects/" class="md-nav__link">
         
   
   
@@ -940,53 +847,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
+  <a href="#1-test-naming-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      Golang
+      1. Test Naming Pattern
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
+  <a href="#2-assertion-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTE
+      2. Assertion Pattern
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#golang-learning-guide" class="md-nav__link">
+  <a href="#3-helper-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      Golang Learning Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Golang Learning Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started
+      3. Helper Pattern
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#recommended-practices" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#4-subtest-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommended Practices
+      4. Subtest Pattern
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#5-common-types-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Common types &amp; verbs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tdd-cycle-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. TDD Cycle Pattern
+    </span>
+  </a>
   
 </li>
       
@@ -1009,44 +919,80 @@
   
 
 
-<h2 id="golang">Golang<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h2>
+  <h1>Notes</h1>
+
+<h3 id="1-test-naming-pattern">1. Test Naming Pattern<a class="headerlink" href="#1-test-naming-pattern" title="Permanent link">&para;</a></h3>
 <ul>
-<li>start with golang tour https://go.dev/tour/welcome/1</li>
-<li>for api development use the alex edwards api dev side.</li>
+<li>All test functions start with <code>Test…</code> → <code>TestAdd</code>, <code>TestHello</code>.</li>
+<li>Test files always end with <code>_test.go</code>.</li>
 </ul>
-<h2 id="note">NOTE<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+<p><strong>Pattern to notice:</strong> Go automatically detects <code>Test*</code> functions. This is consistent across all packages.</p>
+<hr />
+<h3 id="2-assertion-pattern">2. Assertion Pattern<a class="headerlink" href="#2-assertion-pattern" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Dedicate 1 hour to 2 hours a day.type everthing.</li>
-<li>Disable copilot or any AI stuffs unless you want them to teach you or explain further.Here’s a more <strong>documentation-style version</strong> of your text:</li>
+<li>Store output in <code>got</code>.</li>
+<li>Define expected output as <code>want</code>.</li>
+<li>Compare: <code>if got != want { t.Errorf(...) }</code>.</li>
+</ul>
+<p><strong>Pattern:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nx">got</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span>
+<span class="nx">want</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">expected</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">t</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;got %v want %v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="nx">want</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Everything you test in Go follows this basic template, whether it’s strings, ints, slices, or structs.</p>
+<hr />
+<h3 id="3-helper-pattern">3. Helper Pattern<a class="headerlink" href="#3-helper-pattern" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If checks are repeated, extract to helper function:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">assertEqual</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="nx">testing</span><span class="p">.</span><span class="nx">TB</span><span class="p">,</span><span class="w"> </span><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">t</span><span class="p">.</span><span class="nx">Helper</span><span class="p">()</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">t</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;got %d want %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="nx">want</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Use <code>t.Helper()</code> so the test reports the <strong>call site</strong> instead of the helper.</li>
 </ul>
 <hr />
-<h1 id="golang-learning-guide">Golang Learning Guide<a class="headerlink" href="#golang-learning-guide" title="Permanent link">&para;</a></h1>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Complete the <strong>Go Tour</strong>: <a href="https://go.dev/tour/welcome/1">https://go.dev/tour/welcome/1</a></p>
-</li>
-<li>
-<p>Provides a comprehensive introduction to Go’s basics and core concepts.</p>
-</li>
-<li>
-<p>For <strong>API Development</strong>, follow <strong>Alex Edwards’ Go API development tutorials</strong>.</p>
-</li>
-<li>
-<p>Focuses on practical, real-world API building in Go.</p>
-</li>
-</ol>
-<h2 id="recommended-practices">Recommended Practices<a class="headerlink" href="#recommended-practices" title="Permanent link">&para;</a></h2>
+<h3 id="4-subtest-pattern">4. Subtest Pattern<a class="headerlink" href="#4-subtest-pattern" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Daily Practice:</strong> Allocate 1–2 hours each day to coding exercises.</li>
-<li><strong>Manual Typing:</strong> Type all code manually to reinforce learning and retention.</li>
-<li><strong>AI Tools:</strong> Disable Copilot or other AI assistants unless used explicitly for explanations or clarifications.</li>
+<li>For multiple scenarios:</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
-
-<span class="c1"># Activate the virtual environment</span>
-<span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<div class="codehilite"><pre><span></span><code><span class="nx">t</span><span class="p">.</span><span class="nx">Run</span><span class="p">(</span><span class="s">&quot;description&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">func</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">got</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">want</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">expected</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">t</span><span class="p">.</span><span class="nx">Errorf</span><span class="p">(</span><span class="s">&quot;got %v want %v&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="nx">want</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})</span>
 </code></pre></div>
+
+<ul>
+<li>You’ll see this pattern a lot when testing multiple inputs.</li>
+</ul>
+<hr />
+<h3 id="5-common-types-verbs">5. Common types &amp; verbs<a class="headerlink" href="#5-common-types-verbs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>%d</code> → integers</li>
+<li><code>%q</code> → strings (quotes)</li>
+<li><code>%v</code> → any type (generic, structs, slices)</li>
+</ul>
+<p><strong>Pattern:</strong> Always match type with the correct verb for readability.</p>
+<hr />
+<h3 id="6-tdd-cycle-pattern">6. TDD Cycle Pattern<a class="headerlink" href="#6-tdd-cycle-pattern" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Write a <strong>failing test</strong>.</li>
+<li>Make it <strong>compile</strong>.</li>
+<li>Write <strong>minimum code</strong> to pass.</li>
+<li><strong>Refactor</strong> safely with tests.</li>
+</ol>
+<p>This cycle is <strong>the same pattern</strong> for any feature you develop in Go.</p>
 
 
 
@@ -1095,10 +1041,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

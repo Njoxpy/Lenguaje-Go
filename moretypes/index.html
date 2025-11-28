@@ -1,0 +1,2142 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Godbless Nyagawa">
+      
+      
+        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/moretypes/">
+      
+      
+        <link rel="prev" href="../controlflowstatements/">
+      
+      
+        <link rel="next" href="map/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>More Types - My Project Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#go-pointers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Project Docs" class="md-header__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Project Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              More Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Njoxpy/Lenguaje-Go" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Project Docs" class="md-nav__button md-logo" aria-label="My Project Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Project Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Njoxpy/Lenguaje-Go" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Welcome & Basics (Tour Section 1)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Welcome & Basics (Tour Section 1)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Packages, Variables, Functions (17 parts)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Packages, Variables, Functions (17 parts)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Flow Control Statements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Flow Control Statements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controlflowstatements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    More Types
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            More Types
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    More Types
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    More Types
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#go-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Go Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting a Pointer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a Pointer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a Pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointers-to-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointers to Structs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct Literals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Pointer?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output (example)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-values-via-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing Values via Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaring-pointers-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaring Pointers Directly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-and-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions and Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-pointers-matter-real-backend-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pointers Matter (Real Backend Use)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointers-and-nil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointers and Nil
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Challenge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mini Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-to-see-both-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example to See Both in Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-memory-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Memory View
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-we-need-pointers-to-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 1. Why We Need Pointers to Structs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fixing-that-with-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 2. Fixing That with Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 2. Fixing That with Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-a-pointer-struct-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 3. Creating a Pointer Struct Directly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-passing-pointer-structs-to-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 4. Passing Pointer Structs to Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pointer-shortcut-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 5. Pointer Shortcut Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-full-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Example: Full Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Maps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="slices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Questions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Questions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../questions/questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#go-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Go Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting a Pointer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a Pointer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a Pointer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointers-to-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointers to Structs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struct Literals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Pointer?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output (example)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-values-via-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing Values via Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaring-pointers-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaring Pointers Directly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-and-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions and Pointers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-pointers-matter-real-backend-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Pointers Matter (Real Backend Use)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointers-and-nil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pointers and Nil
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini Challenge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mini Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-to-see-both-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example to See Both in Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-memory-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Memory View
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-we-need-pointers-to-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 1. Why We Need Pointers to Structs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fixing-that-with-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 2. Fixing That with Pointers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 2. Fixing That with Pointers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Explanation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-a-pointer-struct-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 3. Creating a Pointer Struct Directly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-passing-pointer-structs-to-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 4. Passing Pointer Structs to Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pointer-shortcut-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 5. Pointer Shortcut Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-full-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Example: Full Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>More Types</h1>
+
+<h2 id="go-pointers">Go Pointers<a class="headerlink" href="#go-pointers" title="Permanent link">&para;</a></h2>
+<p>Go supports <strong>pointers</strong>, which hold the <strong>memory address</strong> of a value.</p>
+<ul>
+<li>The type <code>*T</code> represents a pointer to a value of type <code>T</code>.</li>
+<li>Its <strong>zero value</strong> is <code>nil</code>.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span>
+</code></pre></div>
+
+<h3 id="getting-a-pointer">Getting a Pointer<a class="headerlink" href="#getting-a-pointer" title="Permanent link">&para;</a></h3>
+<p>Use the <code>&amp;</code> operator to get the memory address of a variable.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">42</span>
+<span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">i</span>
+</code></pre></div>
+
+<h3 id="using-a-pointer">Using a Pointer<a class="headerlink" href="#using-a-pointer" title="Permanent link">&para;</a></h3>
+<p>The <code>*</code> operator dereferences a pointer — it accesses the value stored at that address.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// read i through pointer p</span>
+<span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">21</span><span class="w">         </span><span class="c1">// set i through pointer p</span>
+</code></pre></div>
+
+<p>This is called <strong>dereferencing</strong> or <strong>indirection</strong>.</p>
+<blockquote>
+<p>Unlike C, Go <strong>does not allow pointer arithmetic</strong>.</p>
+</blockquote>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">2701</span>
+
+<span class="w">    </span><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">i</span><span class="w">         </span><span class="c1">// point to i</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// read i through pointer</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">21</span><span class="w">         </span><span class="c1">// set i through pointer</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="w">  </span><span class="c1">// new value of i</span>
+
+<span class="w">    </span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">j</span><span class="w">          </span><span class="c1">// point to j</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">37</span><span class="w">    </span><span class="c1">// modify j through pointer</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span><span class="w">  </span><span class="c1">// new value of j</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="structs">Structs<a class="headerlink" href="#structs" title="Permanent link">&para;</a></h2>
+<p>A <strong>struct</strong> is a collection of fields (data grouped together).</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Vertex</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">X</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Y</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Vertex</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="struct-fields">Struct Fields<a class="headerlink" href="#struct-fields" title="Permanent link">&para;</a></h2>
+<p>Access struct fields using the <strong>dot (.) operator</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Vertex</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">X</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Y</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">v</span><span class="p">.</span><span class="nx">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">X</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="pointers-to-structs">Pointers to Structs<a class="headerlink" href="#pointers-to-structs" title="Permanent link">&para;</a></h2>
+<p>Struct fields can also be accessed via <strong>struct pointers</strong>.</p>
+<p>Instead of writing <code>(*p).X</code>, Go allows shorthand access using <code>p.X</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Vertex</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">X</span><span class="w"> </span><span class="kt">int</span>
+<span class="w">    </span><span class="nx">Y</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">v</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">v</span>
+<span class="w">    </span><span class="nx">p</span><span class="p">.</span><span class="nx">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1e9</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="struct-literals">Struct Literals<a class="headerlink" href="#struct-literals" title="Permanent link">&para;</a></h2>
+<p>A <strong>struct literal</strong> creates and initializes a struct.</p>
+<p>You can:</p>
+<ul>
+<li>Specify all fields in order.</li>
+<li>Specify only some fields by name (unordered).</li>
+<li>Use <code>&amp;</code> to get a pointer to the new struct.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Vertex</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">X</span><span class="p">,</span><span class="w"> </span><span class="nx">Y</span><span class="w"> </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">v1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span><span class="w">  </span><span class="c1">// type: Vertex</span>
+<span class="w">    </span><span class="nx">v2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">{</span><span class="nx">X</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span><span class="w">  </span><span class="c1">// Y:0 is implicit</span>
+<span class="w">    </span><span class="nx">v3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">{}</span><span class="w">      </span><span class="c1">// X:0, Y:0</span>
+<span class="w">    </span><span class="nx">p</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">Vertex</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="c1">// type: *Vertex</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="p">,</span><span class="w"> </span><span class="nx">v2</span><span class="p">,</span><span class="w"> </span><span class="nx">v3</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
+<p>An <strong>array</strong> is a fixed-size sequence of elements of the same type.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="kt">int</span>
+</code></pre></div>
+
+<p>Here, <code>a</code> is an array of 10 integers.</p>
+<blockquote>
+<p>Array length is part of its type, so arrays <strong>cannot be resized</strong> — but Go provides <strong>slices</strong> for more flexible use.</p>
+</blockquote>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span>
+<span class="w">    </span><span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">primes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">primes</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="what-is-a-pointer">What is a Pointer?<a class="headerlink" href="#what-is-a-pointer" title="Permanent link">&para;</a></h2>
+<p>A <strong>pointer</strong> is a variable that stores the <strong>memory address</strong> of another variable.</p>
+<p>Think of it like:</p>
+<blockquote>
+<p>A house address (pointer) that tells you where the actual item (value) is stored.</p>
+</blockquote>
+<hr />
+<h2 id="basic-example">Basic Example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">10</span><span class="w">        </span><span class="c1">// x is a normal integer variable</span>
+<span class="w">    </span><span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">x</span><span class="w">        </span><span class="c1">// p is a pointer to x (holds the address of x)</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;x =&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w">     </span><span class="c1">// value of x</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;p =&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="p">)</span><span class="w">     </span><span class="c1">// address of x</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;*p =&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="nx">p</span><span class="p">)</span><span class="w">   </span><span class="c1">// value stored at that address</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="output-example">Output (example)<a class="headerlink" href="#output-example" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>x = 10
+p = 0xc000014090
+*p = 10
+</code></pre></div>
+
+<ul>
+<li><code>&amp;x</code> → gives the <strong>address</strong> of <code>x</code>.</li>
+<li><code>*p</code> → gets the <strong>value</strong> stored at that address.</li>
+</ul>
+<hr />
+<h2 id="changing-values-via-pointers">Changing Values via Pointers<a class="headerlink" href="#changing-values-via-pointers" title="Permanent link">&para;</a></h2>
+<p>If you modify a value using its pointer, it changes the original variable.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">20</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w">  </span><span class="c1">// Output: 20</span>
+</code></pre></div>
+
+<p>Because <code>p</code> points to <code>x</code>, updating <code>*p</code> means you’re updating <code>x</code>.</p>
+<hr />
+<h2 id="declaring-pointers-directly">Declaring Pointers Directly<a class="headerlink" href="#declaring-pointers-directly" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="w"> </span><span class="c1">// p is a pointer to int, but it’s nil for now</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// Output: &lt;nil&gt;</span>
+</code></pre></div>
+
+<p>You can assign it later:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">42</span>
+<span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">x</span>
+</code></pre></div>
+
+<hr />
+<h2 id="functions-and-pointers">Functions and Pointers<a class="headerlink" href="#functions-and-pointers" title="Permanent link">&para;</a></h2>
+<p>Go <strong>passes arguments by value</strong>, meaning it copies data.
+To modify a variable inside a function, use a pointer.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">update</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">num</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">*</span><span class="nx">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="nx">update</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">x</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="c1">// Output: 15</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Using <code>&amp;x</code> passes the <strong>address</strong>, not the value — letting the function modify <code>x</code>.</p>
+<hr />
+<h2 id="why-pointers-matter-real-backend-use">Why Pointers Matter (Real Backend Use)<a class="headerlink" href="#why-pointers-matter-real-backend-use" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Performance:</strong> Avoid copying big structs or slices.</li>
+<li><strong>Mutability:</strong> Allow functions to modify shared data.</li>
+<li><strong>Nil checks:</strong> Optional fields in structs (similar to nullable references).</li>
+</ol>
+<p>Example with a struct:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Age</span><span class="w">  </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">updateUser</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">u</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">user</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Age</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">updateUser</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">user</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w"> </span><span class="c1">// Output: 22</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="pointers-and-nil">Pointers and Nil<a class="headerlink" href="#pointers-and-nil" title="Permanent link">&para;</a></h2>
+<p>A pointer with no address points to <code>nil</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="kt">int</span>
+<span class="k">if</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Pointer is nil&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>You must allocate before using it:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">new</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="c1">// Output: 100</span>
+</code></pre></div>
+
+<hr />
+<h2 id="recap-summary">Recap Summary<a class="headerlink" href="#recap-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;x</code></td>
+<td>Address-of</td>
+<td>Get address of variable</td>
+</tr>
+<tr>
+<td><code>*p</code></td>
+<td>Dereference</td>
+<td>Get or set value at pointer</td>
+</tr>
+<tr>
+<td><code>var p *int</code></td>
+<td>Declaration</td>
+<td>p can point to an int</td>
+</tr>
+<tr>
+<td><code>new(T)</code></td>
+<td>Allocation</td>
+<td>Creates pointer to new T</td>
+</tr>
+<tr>
+<td><code>nil</code></td>
+<td>Zero value</td>
+<td>Uninitialized pointer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mini-challenge">Mini Challenge<a class="headerlink" href="#mini-challenge" title="Permanent link">&para;</a></h2>
+<p>Try this out </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="nx">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">a</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="nx">b</span><span class="p">)</span>
+
+<span class="w">    </span><span class="o">*</span><span class="nx">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="nx">b</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nx">c</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">new</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>
+<span class="w">    </span><span class="o">*</span><span class="nx">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">c</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Can you explain what prints at each line?</p>
+<hr />
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td><strong>Address-of / Referencing</strong></td>
+<td>Gives you the <strong>memory address</strong> of a variable</td>
+<td><code>p := &amp;x</code></td>
+<td>“Point <code>p</code> to the address of <code>x</code>.”</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><strong>Dereference / Indirection</strong></td>
+<td>Accesses the <strong>value</strong> stored at a memory address</td>
+<td><code>*p = 10</code></td>
+<td>“Go to the address stored in <code>p</code> and set its value to 10.”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="example-to-see-both-in-action">Example to See Both in Action<a class="headerlink" href="#example-to-see-both-in-action" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nx">x</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">5</span>
+<span class="nx">p</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">x</span><span class="w">   </span><span class="c1">// referencing</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span><span class="w">   </span><span class="c1">// prints memory address, e.g. 0xc0000180b0</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">p</span><span class="p">)</span><span class="w">  </span><span class="c1">// dereferencing → prints 5</span>
+
+<span class="o">*</span><span class="nx">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">20</span><span class="w">          </span><span class="c1">// modify the value at that address</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w">   </span><span class="c1">// prints 20</span>
+</code></pre></div>
+
+<hr />
+<h3 id="visual-memory-view">Visual Memory View<a class="headerlink" href="#visual-memory-view" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nx">x</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">]</span><span class="w">           </span><span class="err">←</span><span class="w"> </span><span class="nx">value</span>
+<span class="nx">p</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="mh">0xc0000180b0</span>
+<span class="o">*</span><span class="nx">p</span><span class="p">:</span><span class="w"> </span><span class="nx">dereferences</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nx">gives</span><span class="w"> </span><span class="mi">5</span>
+</code></pre></div>
+
+<p>So:</p>
+<ul>
+<li><code>&amp;x</code> = “Where is x?”</li>
+<li><code>*p</code> = “What’s stored there?”</li>
+</ul>
+<p>🔥 Perfect timing bro — you’ve already mastered <strong>structs</strong>, so now let’s take it <strong>one level higher:</strong>
+👉 <strong>Pointers to Structs</strong> — how Go lets you modify struct data directly without copying.</p>
+<hr />
+<h2 id="1-why-we-need-pointers-to-structs">🧩 1. Why We Need Pointers to Structs<a class="headerlink" href="#1-why-we-need-pointers-to-structs" title="Permanent link">&para;</a></h2>
+<p>By default, <strong>structs are value types</strong>.
+That means assigning or passing them <strong>copies</strong> the entire struct.</p>
+<p>Example 👇</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Age</span><span class="w">  </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">u1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">u2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">u1</span><span class="w">      </span><span class="c1">// full copy</span>
+<span class="w">    </span><span class="nx">u2</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">30</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">u1</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w"> </span><span class="c1">// 22 ❌ not changed</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">u2</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w"> </span><span class="c1">// 30</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>So <code>u2</code> is a <strong>separate copy</strong> — changing it doesn’t affect <code>u1</code>.</p>
+<hr />
+<h2 id="2-fixing-that-with-pointers">🧠 2. Fixing That with Pointers<a class="headerlink" href="#2-fixing-that-with-pointers" title="Permanent link">&para;</a></h2>
+<p>If we want both variables to point to the <strong>same memory</strong>, we use a <strong>pointer to the struct</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Age</span><span class="w">  </span><span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">u1</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">u2</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">u1</span><span class="w">        </span><span class="c1">// u2 is a pointer to u1</span>
+
+<span class="w">    </span><span class="nx">u2</span><span class="p">.</span><span class="nx">Age</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">30</span><span class="w">      </span><span class="c1">// modify through the pointer</span>
+
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">u1</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w"> </span><span class="c1">// 30 ✅ changed</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">u2</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w"> </span><span class="c1">// 30 ✅ same memory</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="explanation">🧩 Explanation:<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>&amp;u1</code> → gives the address of <code>u1</code></li>
+<li><code>u2</code> → stores that address (pointer)</li>
+<li><code>u2.Age</code> → Go automatically dereferences the pointer for you (shortcut for <code>(*u2).Age</code>)</li>
+</ul>
+<hr />
+<h2 id="3-creating-a-pointer-struct-directly">⚙️ 3. Creating a Pointer Struct Directly<a class="headerlink" href="#3-creating-a-pointer-struct-directly" title="Permanent link">&para;</a></h2>
+<p>You can create a struct pointer without an existing variable using <code>new()</code> or <code>&amp;{}</code> syntax.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">u</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">User</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Lee&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Age</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span><span class="w">       </span><span class="c1">// prints pointer address</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">u</span><span class="p">)</span><span class="w">      </span><span class="c1">// prints full struct value</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span><span class="w">  </span><span class="c1">// access field directly</span>
+</code></pre></div>
+
+<p>✅ Go lets you use <code>u.Name</code> even though <code>u</code> is a pointer — it automatically dereferences for you.</p>
+<hr />
+<h2 id="4-passing-pointer-structs-to-functions">🧱 4. Passing Pointer Structs to Functions<a class="headerlink" href="#4-passing-pointer-structs-to-functions" title="Permanent link">&para;</a></h2>
+<p>This is common in backend apps — you pass a pointer so the function modifies the original struct.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nx">makeOlder</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">u</span><span class="p">.</span><span class="nx">Age</span><span class="o">++</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">user</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">User</span><span class="p">{</span><span class="s">&quot;Njox&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">makeOlder</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">user</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Age</span><span class="p">)</span><span class="w"> </span><span class="c1">// 23 ✅ modified</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>We pass <code>&amp;user</code> (the address)</li>
+<li>The function uses <code>*User</code> (pointer receiver)</li>
+<li>The original struct changes directly</li>
+</ul>
+<hr />
+<h2 id="5-pointer-shortcut-recap">🧠 5. Pointer Shortcut Recap<a class="headerlink" href="#5-pointer-shortcut-recap" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;x</code></td>
+<td>Get the address of <code>x</code></td>
+</tr>
+<tr>
+<td><code>*p</code></td>
+<td>Get the value stored at pointer <code>p</code></td>
+</tr>
+<tr>
+<td><code>p := &amp;User{}</code></td>
+<td>Pointer to new struct</td>
+</tr>
+<tr>
+<td><code>p.Name</code></td>
+<td>Go auto-dereferences (you can use this directly)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="example-full-demo">⚡ Example: Full Demo<a class="headerlink" href="#example-full-demo" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">Product</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Name</span><span class="w">  </span><span class="kt">string</span>
+<span class="w">    </span><span class="nx">Price</span><span class="w"> </span><span class="kt">float64</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">discount</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="o">*</span><span class="nx">Product</span><span class="p">,</span><span class="w"> </span><span class="nx">percent</span><span class="w"> </span><span class="kt">float64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">p</span><span class="p">.</span><span class="nx">Price</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">Price</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">Price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">percent</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">prod</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Product</span><span class="p">{</span><span class="s">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">}</span>
+<span class="w">    </span><span class="nx">discount</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">prod</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">prod</span><span class="p">)</span><span class="w"> </span><span class="c1">// {Laptop 900}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>✅ The function modifies the original <code>prod</code> because it receives a <strong>pointer</strong>.</p>
+<hr />
+<h2 id="summary_1">🔥 Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Without Pointer</th>
+<th>With Pointer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Memory</td>
+<td>Copies struct</td>
+<td>References same struct</td>
+</tr>
+<tr>
+<td>Function edits</td>
+<td>Doesn’t affect original</td>
+<td>Updates original</td>
+</tr>
+<tr>
+<td>Common use</td>
+<td>Reading data</td>
+<td>Updating data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>So now you can:</p>
+<ul>
+<li>Create structs ✅</li>
+<li>Use pointers to structs ✅</li>
+<li>Modify data directly ✅</li>
+</ul>
+<hr />
+<p>Next step (and it’s where Go shines in backend dev):
+👉 <strong>Pointer Receivers in Struct Methods</strong> — attaching functions to structs so they can mutate data directly (like classes in OOP).</p>
+<p>Do you want to move to that next?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

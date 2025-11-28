@@ -10,13 +10,9 @@
         <meta name="author" content="Godbless Nyagawa">
       
       
-        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/advice/">
+        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/debugging/">
       
       
-        <link rel="prev" href="..">
-      
-      
-        <link rel="next" href="../docs/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Advice - My Project Docs</title>
+        <title>Index - My Project Docs</title>
       
     
     
@@ -66,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#1-install-delve" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advice
+              Index
             
           </span>
         </div>
@@ -241,30 +237,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Advice
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../advice/" class="md-nav__link">
         
   
   
@@ -275,75 +251,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    <span class="md-ellipsis">
-      NOTE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#golang-learning-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang Learning Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Golang Learning Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recommended-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -940,46 +847,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#golang" class="md-nav__link">
+  <a href="#1-install-delve" class="md-nav__link">
     <span class="md-ellipsis">
-      Golang
+      1. Install Delve
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
+  <a href="#2-start-a-debug-session" class="md-nav__link">
     <span class="md-ellipsis">
-      NOTE
+      2. Start a debug session
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#golang-learning-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Golang Learning Guide
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Golang Learning Guide">
+    <nav class="md-nav" aria-label="2. Start a debug session">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#start-debugging" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recommended-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommended Practices
+      Start debugging
     </span>
   </a>
   
@@ -987,6 +876,135 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-basic-dlv-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Basic dlv commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Basic dlv commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-breakpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Breakpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-run-the-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Run the program
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-inspect-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Inspect variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-step-through-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Step through code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-list-code-around-current-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 List code around current line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-watch-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Watch variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-backtrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Backtrace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-exit-debug-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Exit debug session
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-debugging-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Debugging tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tips-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Tips &amp; best practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Tips &amp; best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example session:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
   
 </li>
       
@@ -1009,44 +1027,150 @@
   
 
 
-<h2 id="golang">Golang<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h2>
-<ul>
-<li>start with golang tour https://go.dev/tour/welcome/1</li>
-<li>for api development use the alex edwards api dev side.</li>
-</ul>
-<h2 id="note">NOTE<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Dedicate 1 hour to 2 hours a day.type everthing.</li>
-<li>Disable copilot or any AI stuffs unless you want them to teach you or explain further.Here’s a more <strong>documentation-style version</strong> of your text:</li>
-</ul>
-<hr />
-<h1 id="golang-learning-guide">Golang Learning Guide<a class="headerlink" href="#golang-learning-guide" title="Permanent link">&para;</a></h1>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Complete the <strong>Go Tour</strong>: <a href="https://go.dev/tour/welcome/1">https://go.dev/tour/welcome/1</a></p>
-</li>
-<li>
-<p>Provides a comprehensive introduction to Go’s basics and core concepts.</p>
-</li>
-<li>
-<p>For <strong>API Development</strong>, follow <strong>Alex Edwards’ Go API development tutorials</strong>.</p>
-</li>
-<li>
-<p>Focuses on practical, real-world API building in Go.</p>
-</li>
-</ol>
-<h2 id="recommended-practices">Recommended Practices<a class="headerlink" href="#recommended-practices" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Daily Practice:</strong> Allocate 1–2 hours each day to coding exercises.</li>
-<li><strong>Manual Typing:</strong> Type all code manually to reinforce learning and retention.</li>
-<li><strong>AI Tools:</strong> Disable Copilot or other AI assistants unless used explicitly for explanations or clarifications.</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
+  <h1>Index</h1>
 
-<span class="c1"># Activate the virtual environment</span>
-<span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<h2 id="1-install-delve">1. Install Delve<a class="headerlink" href="#1-install-delve" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-delve/delve/cmd/dlv@latest
 </code></pre></div>
+
+<ul>
+<li>Make sure your <code>$GOPATH/bin</code> or <code>$HOME/go/bin</code> is in your PATH.</li>
+<li>Check installation:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span>version
+</code></pre></div>
+
+<h2 id="2-start-a-debug-session">2. Start a debug session<a class="headerlink" href="#2-start-a-debug-session" title="Permanent link">&para;</a></h2>
+<p>Assume you have a Go program <code>main.go</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">Add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Sum:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">sum</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="start-debugging">Start debugging<a class="headerlink" href="#start-debugging" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span>debug
+</code></pre></div>
+
+<ul>
+<li>This <strong>compiles your program with debugging info</strong> and starts an interactive session.</li>
+</ul>
+<h2 id="3-basic-dlv-commands">3. Basic <code>dlv</code> commands<a class="headerlink" href="#3-basic-dlv-commands" title="Permanent link">&para;</a></h2>
+<h3 id="31-breakpoints">3.1 Breakpoints<a class="headerlink" href="#31-breakpoints" title="Permanent link">&para;</a></h3>
+<p>Set a breakpoint at a line:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main.go:6
+</code></pre></div>
+
+<ul>
+<li>Or at a function:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main.Add
+</code></pre></div>
+
+<h3 id="32-run-the-program">3.2 Run the program<a class="headerlink" href="#32-run-the-program" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
+</code></pre></div>
+
+<ul>
+<li>Runs until it hits a breakpoint.</li>
+</ul>
+<h3 id="33-inspect-variables">3.3 Inspect variables<a class="headerlink" href="#33-inspect-variables" title="Permanent link">&para;</a></h3>
+<p>When stopped at a breakpoint:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>x
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>y
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>sum
+</code></pre></div>
+
+<ul>
+<li>You can also evaluate expressions:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>x<span class="w"> </span>+<span class="w"> </span>y
+</code></pre></div>
+
+<h3 id="34-step-through-code">3.4 Step through code<a class="headerlink" href="#34-step-through-code" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Step into functions:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>step
+</code></pre></div>
+
+<ul>
+<li>Step over current line:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>next
+</code></pre></div>
+
+<ul>
+<li>Step out of the current function:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>stepout
+</code></pre></div>
+
+<h3 id="35-list-code-around-current-line">3.5 List code around current line<a class="headerlink" href="#35-list-code-around-current-line" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>list
+</code></pre></div>
+
+<h3 id="36-watch-variables">3.6 Watch variables<a class="headerlink" href="#36-watch-variables" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>watch<span class="w"> </span>sum
+</code></pre></div>
+
+<ul>
+<li>Stops execution when <code>sum</code> changes.</li>
+</ul>
+<h3 id="37-backtrace">3.7 Backtrace<a class="headerlink" href="#37-backtrace" title="Permanent link">&para;</a></h3>
+<p>Show the call stack:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>bt
+</code></pre></div>
+
+<h2 id="4-exit-debug-session">4. Exit debug session<a class="headerlink" href="#4-exit-debug-session" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>quit
+</code></pre></div>
+
+<h2 id="5-debugging-tests">5. Debugging tests<a class="headerlink" href="#5-debugging-tests" title="Permanent link">&para;</a></h2>
+<p>You can also debug tests:</p>
+<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+
+<ul>
+<li>Or debug a specific test:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--<span class="w"> </span>-test.run<span class="w"> </span>TestAdd
+</code></pre></div>
+
+<ul>
+<li>Use the same commands (<code>break</code>, <code>print</code>, <code>next</code>, etc.) inside your test.</li>
+</ul>
+<h2 id="6-tips-best-practices">6. Tips &amp; best practices<a class="headerlink" href="#6-tips-best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Use breakpoints on functions rather than line numbers</strong> when refactoring often.</li>
+<li><strong>Inspect complex types</strong>: slices, structs, maps using <code>print</code>.</li>
+<li><strong>Step over vs step into</strong>: <code>next</code> skips function internals; <code>step</code> enters.</li>
+<li>Combine with <strong>VS Code or GoLand</strong> for GUI debugging; Delve works behind the scenes.</li>
+</ol>
+<h3 id="example-session">Example session:<a class="headerlink" href="#example-session" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>dlv<span class="w"> </span>debug
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main.Add
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>x
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>next
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>step
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>sum
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
+<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>quit
+</code></pre></div>
+
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/go-delve/delve">Delve is a debugger for the Go programming language.</a></li>
+</ul>
 
 
 
