@@ -1,19 +1,12 @@
 // tuesday report 28 october 2025
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
-func main(){
+func HelloWorld() string {
+	return "Hello world"
+}
 
-	// variables
-	var name string = "Kinjektile Ngwale"
-
-	fmt.Println(name)
-	fmt.Println("day 1 palying ground golang!")
-	fmt.Println("The time is: ", time.Now())
-
-
+func main() {
+	fmt.Println(HelloWorld())
 }
