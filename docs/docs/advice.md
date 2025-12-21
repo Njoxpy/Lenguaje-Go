@@ -1,6 +1,6 @@
 ## Golang
 
-- start with golang tour https://go.dev/tour/welcome/1
+- start with golang tour [https://go.dev/tour/welcome/1](https://go.dev/tour/welcome/1)
 - for api development use the alex edwards api dev side.
 
 ## NOTE

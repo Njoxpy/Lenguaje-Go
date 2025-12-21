@@ -50,6 +50,7 @@ nav:
       - More Types: moretypes/index.md
       - Maps: moretypes/map.md
       - Functions: moretypes/functions.md
+      - Named Returns: moretypes/namedreturns.md
       - Slices: moretypes/slices.md
       - Methods: methodsandinterfaces/methodsandinterfaces.md
 
