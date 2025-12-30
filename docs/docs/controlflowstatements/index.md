@@ -12,14 +12,14 @@ The basic `for` loop consists of **three components** separated by semicolons:
 
 ### **How it Works**
 
-* The **init statement** is commonly a short variable declaration.
+- The **init statement** is commonly a short variable declaration.
   Variables declared here are visible **only within the scope of the for loop**.
-* The loop continues to execute **as long as the condition is true**.
-* Once the condition evaluates to `false`, the loop stops.
-* Unlike C, Java, or JavaScript:
+- The loop continues to execute **as long as the condition is true**.
+- Once the condition evaluates to `false`, the loop stops.
+- Unlike C, Java, or JavaScript:
 
-  * There are **no parentheses** around the components.
-  * The **curly braces `{}` are mandatory**, even for single-line loops.
+  - There are **no parentheses** around the components.
+  - The **curly braces `{}` are mandatory**, even for single-line loops.
 
 ---
 
@@ -41,10 +41,10 @@ func main() {
 
 **Explanation:**
 
-* `i := 0` initializes the counter.
-* The loop runs while `i < 10`.
-* After each iteration, `i++` increments `i` by 1.
-* The loop accumulates the sum of numbers from 0 to 9.
+- `i := 0` initializes the counter.
+- The loop runs while `i < 10`.
+- After each iteration, `i++` increments `i` by 1.
+- The loop accumulates the sum of numbers from 0 to 9.
 
 **Output:**
 
@@ -79,9 +79,9 @@ func main() {
 
 ### **Explanation**
 
-* The **init** and **post** sections are left empty.
-* Only the **condition** (`sum < 10`) remains between the semicolons.
-* This is perfectly valid Go syntax and works just like a **while loop** in other languages.
+- The **init** and **post** sections are left empty.
+- Only the **condition** (`sum < 10`) remains between the semicolons.
+- This is perfectly valid Go syntax and works just like a **while loop** in other languages.
 
 The above example doubles the value of `sum` until it is no longer less than 10.
 
@@ -132,12 +132,13 @@ func main() {
 
 ### **Explanation**
 
-* The **init** and **post** statements are left empty (`;` marks their positions).
-* This means:
+- The **init** and **post** statements are left empty (`;` marks their positions).
+- This means:
 
-  * There is **no initialization** before the loop starts.
-  * There is **no automatic update** after each iteration.
-* The loop runs **as long as** the condition `sum < 10` is `true`.
+  - There is **no initialization** before the loop starts.
+  - There is **no automatic update** after each iteration.
+
+- The loop runs **as long as** the condition `sum < 10` is `true`.
 
 Here’s what happens step by step:
 
@@ -172,6 +173,7 @@ for sum < 10 {
 ```
 
 This demonstrates Go’s flexibility — you can use `for` in multiple forms, including the traditional C-style loop or simplified while-like loops.
+
 ## **For as Go's "While"**
 
 In Go, there is **no separate `while` loop**.
@@ -201,10 +203,10 @@ func main() {
 
 ### **Explanation**
 
-* The **condition** `sum < 1000` is checked before each iteration.
-* There are **no init or post statements**; the semicolons are omitted.
-* The loop continues **as long as the condition is true**.
-* Each iteration doubles the value of `sum`.
+- The **condition** `sum < 1000` is checked before each iteration.
+- There are **no init or post statements**; the semicolons are omitted.
+- The loop continues **as long as the condition is true**.
+- Each iteration doubles the value of `sum`.
 
 ---
 
@@ -218,11 +220,11 @@ func main() {
 
 ### **Key Insight**
 
-* Go’s `for` loop is **versatile**:
+- Go’s `for` loop is **versatile**:
 
-  * Traditional `for` with `init; condition; post`
-  * `for` as a **while loop** (`for condition { ... }`)
-  * Infinite loop (`for { ... }`)
+  - Traditional `for` with `init; condition; post`
+  - `for` as a **while loop** (`for condition { ... }`)
+  - Infinite loop (`for { ... }`)
 
 This flexibility makes Go loops **simple and powerful**.
 
@@ -240,12 +242,13 @@ func main() {
 
 }
 ```
+
 ## **If Statements**
 
 In Go, **`if` statements** are similar to `for` loops in syntax:
 
-* The **condition does not require parentheses** `()`.
-* **Braces `{}` are required**, even for single-line blocks.
+- The **condition does not require parentheses** `()`.
+- **Braces `{}` are required**, even for single-line blocks.
 
 ---
 
@@ -278,8 +281,9 @@ func main() {
 1. The function `sqrt` computes the square root of `x`.
 2. The `if` statement checks if `x` is negative:
 
-   * If yes, it recursively calls `sqrt` with `-x` and appends `"i"` to indicate an imaginary number.
-   * If not, it returns the square root of `x` using `math.Sqrt`.
+   - If yes, it recursively calls `sqrt` with `-x` and appends `"i"` to indicate an imaginary number.
+   - If not, it returns the square root of `x` using `math.Sqrt`.
+
 3. The `fmt.Sprint` function converts the float result to a string for consistent return type.
 
 ---
@@ -294,19 +298,21 @@ func main() {
 
 ### **Key Points**
 
-* Go allows **inline `if` conditions** without parentheses:
+- Go allows **inline `if` conditions** without parentheses:
 
   ```go
   if x < 0 { ... }
   ```
-* Braces are **mandatory** and define the scope of the conditional block.
-* Go supports **recursive function calls** as shown in the example.
+
+- Braces are **mandatory** and define the scope of the conditional block.
+- Go supports **recursive function calls** as shown in the example.
+
 ## **If Statement with a Short Statement**
 
 In Go, an `if` statement can include a **short statement** that runs **before the condition**.
 
-* Variables declared in this short statement are **only in scope within the `if` block**.
-* This is useful for computations that are only needed for the conditional check.
+- Variables declared in this short statement are **only in scope within the `if` block**.
+- This is useful for computations that are only needed for the conditional check.
 
 ---
 
@@ -346,6 +352,7 @@ func main() {
    ```
 
    This computes `x` raised to the power `n` and assigns it to `v`.
+
 2. The condition `v < lim` is evaluated immediately after the short statement.
 3. `v` is **only visible inside the `if` statement**.
 4. If `v < lim`, the function returns `v`; otherwise, it returns `lim`.
@@ -362,8 +369,8 @@ func main() {
 
 ### **Key Points**
 
-* Short statements in `if` allow **clean, inline computation** before the condition.
-* Scope of variables declared this way is **limited to the `if` block**, which helps avoid polluting the outer scope.
+- Short statements in `if` allow **clean, inline computation** before the condition.
+- Scope of variables declared this way is **limited to the `if` block**, which helps avoid polluting the outer scope.
 
 Example of limited scope:
 
@@ -373,15 +380,16 @@ if v := computeSomething(); v > 10 {
 }
 // fmt.Println(v) // Error: v is undefined here
 ```
+
 ## **Switch Statement**
 
 A **`switch` statement** in Go is a concise way to write a sequence of `if-else` statements.
 
-* It **runs the first case** whose value matches the switch expression.
-* Unlike C, C++, Java, or JavaScript:
+- It **runs the first case** whose value matches the switch expression.
+- Unlike C, C++, Java, or JavaScript:
 
-  * Go **automatically breaks** after the matched case. No explicit `break` is needed.
-  * Switch **cases do not have to be constants**, and values do not need to be integers.
+  - Go **automatically breaks** after the matched case. No explicit `break` is needed.
+  - Switch **cases do not have to be constants**, and values do not need to be integers.
 
 ---
 
@@ -416,9 +424,10 @@ func main() {
 1. `os := runtime.GOOS` initializes a variable with the operating system name.
 2. The `switch` evaluates `os` and executes **only the first matching case**:
 
-   * `"darwin"` → prints `"macOS."`
-   * `"linux"` → prints `"Linux."`
-   * `default` → prints any other OS.
+   - `"darwin"` → prints `"macOS."`
+   - `"linux"` → prints `"Linux."`
+   - `default` → prints any other OS.
+
 3. No `break` statements are required — Go stops automatically after executing the matching case.
 
 ---
@@ -433,11 +442,12 @@ Go runs on Linux.
 
 ### **Key Points**
 
-* Go’s `switch` is **more flexible** than many other languages:
+- Go’s `switch` is **more flexible** than many other languages:
 
-  * Cases can be any **expression**, not just constants.
-  * Only the **matching case executes**; no fallthrough unless explicitly requested with the `fallthrough` keyword.
-* Variables declared in the **switch statement** (like `os` above) are scoped **only within the switch**.
+  - Cases can be any **expression**, not just constants.
+  - Only the **matching case executes**; no fallthrough unless explicitly requested with the `fallthrough` keyword.
+
+- Variables declared in the **switch statement** (like `os` above) are scoped **only within the switch**.
 
 ---
 
@@ -492,9 +502,10 @@ func main() {
 1. `today := time.Now().Weekday()` gets the current day of the week.
 2. The `switch` statement checks `time.Saturday` against relative values:
 
-   * `today + 0` → today
-   * `today + 1` → tomorrow
-   * `today + 2` → in two days
+   - `today + 0` → today
+   - `today + 1` → tomorrow
+   - `today + 2` → in two days
+
 3. The first case that matches executes, and the switch **exits immediately**.
 4. The `default` case runs if none of the other cases match.
 
@@ -513,9 +524,10 @@ Tomorrow.
 
 ### **Key Points**
 
-* Go evaluates **cases sequentially** from top to bottom.
-* Only the **first successful case executes**.
-* This allows you to include **complex expressions** in later cases without worrying about unnecessary evaluation.
+- Go evaluates **cases sequentially** from top to bottom.
+- Only the **first successful case executes**.
+- This allows you to include **complex expressions** in later cases without worrying about unnecessary evaluation.
+
 ## **Switch with No Condition**
 
 A **switch without a condition** in Go is equivalent to `switch true`.
@@ -570,16 +582,17 @@ Good afternoon.
 
 ### **Key Points**
 
-* `switch` without a condition behaves like `switch true`.
-* Each `case` is a boolean expression.
-* Only the **first true case** executes.
-* It improves readability over long chains of `if-else if-else` statements.
+- `switch` without a condition behaves like `switch true`.
+- Each `case` is a boolean expression.
+- Only the **first true case** executes.
+- It improves readability over long chains of `if-else if-else` statements.
+
 ## **Defer Statement**
 
 In Go, the **`defer`** statement postpones the execution of a function until the **surrounding function returns**.
 
-* The **arguments** of the deferred function are evaluated immediately.
-* The **function call itself** is executed later, just before the function exits.
+- The **arguments** of the deferred function are evaluated immediately.
+- The **function call itself** is executed later, just before the function exits.
 
 This is often used for **cleanup tasks**, such as closing files or releasing resources.
 
@@ -620,15 +633,16 @@ world
 
 ### **Key Points**
 
-* Multiple `defer` statements are **executed in LIFO order** (last-in, first-out).
-* Useful for **resource cleanup**:
+- Multiple `defer` statements are **executed in LIFO order** (last-in, first-out).
+- Useful for **resource cleanup**:
 
 ```go
 f, _ := os.Open("file.txt")
 defer f.Close() // ensures file is closed at the end of the function
 ```
 
-* Arguments are evaluated **at the point of defer**, but the call happens **later**.
+- Arguments are evaluated **at the point of defer**, but the call happens **later**.
+
 ## **Stacking Defers**
 
 In Go, **deferred function calls are pushed onto a stack**.
@@ -688,12 +702,12 @@ done
 
 ### **Key Points**
 
-* Deferred calls are executed **after the surrounding function finishes**.
-* They run in **LIFO order**, so the **last deferred function executes first**.
-* Useful for:
+- Deferred calls are executed **after the surrounding function finishes**.
+- They run in **LIFO order**, so the **last deferred function executes first**.
+- Useful for:
 
-  * Reversing operations
-  * Cleaning up resources in reverse order of acquisition
+  - Reversing operations
+  - Cleaning up resources in reverse order of acquisition
 
 > ✅ You have completed the **Defer** lesson!
 > You can now move on to the next lesson or explore other Go topics.
@@ -763,10 +777,10 @@ func main() {
 
 ### **Key Points**
 
-* Variables declared in the `if` short statement (`if v := ...; condition`)
+- Variables declared in the `if` short statement (`if v := ...; condition`)
   are available **only within** that `if` and its corresponding `else`.
-* The `else` block runs **only if** the `if` condition evaluates to `false`.
-* This makes Go’s `if` syntax concise and allows safe, scoped variable declarations.
+- The `else` block runs **only if** the `if` condition evaluates to `false`.
+- This makes Go’s `if` syntax concise and allows safe, scoped variable declarations.
 
 ---
 
@@ -782,9 +796,9 @@ It’s often cleaner and more readable than writing multiple `if–else` chains.
 
 ### **How It Works**
 
-* A `switch` runs the **first case** that matches the condition.
-* Unlike C, C++, or Java, **Go does not require a `break` statement** — it stops automatically after a matching case.
-* Cases **don’t have to be constants** or integers — they can be strings, variables, or expressions.
+- A `switch` runs the **first case** that matches the condition.
+- Unlike C, C++, or Java, **Go does not require a `break` statement** — it stops automatically after a matching case.
+- Cases **don’t have to be constants** or integers — they can be strings, variables, or expressions.
 
 ---
 
@@ -821,9 +835,9 @@ func main() {
 
 2. Go compares `os` against each `case`:
 
-   * `"darwin"` → macOS
-   * `"linux"` → Linux
-   * `default` → all other OS names
+   - `"darwin"` → macOS
+   - `"linux"` → Linux
+   - `default` → all other OS names
 
 3. The first matching case runs, and Go **automatically breaks** afterward.
 
@@ -853,15 +867,16 @@ Go runs on windows.
 
 ### **Key Points**
 
-* No need for manual `break` — it’s implicit.
-* Cases can evaluate **any type of expression**.
-* Short variable declarations (like `os := ...`) are scoped to the `switch` only.
-* `default` handles all unmatched cases, similar to the final `else`.
+- No need for manual `break` — it’s implicit.
+- Cases can evaluate **any type of expression**.
+- Short variable declarations (like `os := ...`) are scoped to the `switch` only.
+- `default` handles all unmatched cases, similar to the final `else`.
 
 ---
 
 ✅ **Tip:**
 Use `switch` when checking one value against several possibilities — it makes code **cleaner and easier to read** than long `if-else` chains.
+
 ### 🌀 **Switch Evaluation Order in Go**
 
 In Go, **switch cases are checked from top to bottom**, and evaluation **stops immediately** when a matching case is found — no further cases are evaluated.
@@ -905,10 +920,10 @@ func main() {
 
 2. The `switch` compares `time.Saturday` to each case **in order**:
 
-   * `today + 0` → means *today is Saturday*.
-   * `today + 1` → means *Saturday is tomorrow*.
-   * `today + 2` → means *Saturday is in two days*.
-   * Otherwise → `"Too far away."`
+   - `today + 0` → means _today is Saturday_.
+   - `today + 1` → means _Saturday is tomorrow_.
+   - `today + 2` → means _Saturday is in two days_.
+   - Otherwise → `"Too far away."`
 
 3. Go **stops evaluating** after the first matching case — it does **not** check further.
 
@@ -941,10 +956,10 @@ Too far away.
 
 ### ⚙️ **Key Concepts**
 
-* Switches evaluate **top to bottom**.
-* Go **stops** after the **first successful** match (no “fallthrough” unless explicitly stated).
-* Each `case` can be **an expression**, not just a constant.
-* The **`default`** clause runs if **no other case** matches.
+- Switches evaluate **top to bottom**.
+- Go **stops** after the **first successful** match (no “fallthrough” unless explicitly stated).
+- Each `case` can be **an expression**, not just a constant.
+- The **`default`** clause runs if **no other case** matches.
 
 ---
 
@@ -956,6 +971,7 @@ So in that environment, the day is **Tuesday**, making the output always:
 When's Saturday?
 Too far away.
 ```
+
 ### 🌇 **Switch with No Condition in Go**
 
 A **switch without a condition** in Go is equivalent to writing:
@@ -1003,9 +1019,9 @@ func main() {
 
 3. Each `case` is evaluated **in order**:
 
-   * If `t.Hour() < 12`, prints `"Good morning!"`
-   * Else if `t.Hour() < 17`, prints `"Good afternoon."`
-   * Otherwise, `"Good evening."`
+   - If `t.Hour() < 12`, prints `"Good morning!"`
+   - Else if `t.Hour() < 17`, prints `"Good afternoon."`
+   - Otherwise, `"Good evening."`
 
 4. Once a matching case is found, Go **exits the switch** — no further cases are checked.
 
@@ -1025,15 +1041,16 @@ If the current time is:
 
 ### ⚙️ **Key Points**
 
-* `switch` without a condition is shorthand for `switch true`.
-* Makes long `if-else` chains more **compact and readable**.
-* Each case should be a **boolean expression**.
-* Execution stops after the **first true** case.
+- `switch` without a condition is shorthand for `switch true`.
+- Makes long `if-else` chains more **compact and readable**.
+- Each case should be a **boolean expression**.
+- Execution stops after the **first true** case.
 
 ---
 
 💡 **Tip:**
 You can use this style for multiple complex conditions — it keeps your Go code simple, expressive, and elegant.
+
 ### 🕒 **Defer in Go**
 
 A **`defer` statement** postpones the execution of a function **until the surrounding function returns**.
@@ -1081,22 +1098,23 @@ world
 
 ### ⚙️ **Key Points**
 
-* `defer` is executed **after** the surrounding function ends.
-* **Arguments** are evaluated immediately when the `defer` is declared.
-* Useful for tasks like:
+- `defer` is executed **after** the surrounding function ends.
+- **Arguments** are evaluated immediately when the `defer` is declared.
+- Useful for tasks like:
 
-  * Closing files (`defer file.Close()`)
-  * Unlocking mutexes
-  * Releasing network connections or database resources
+  - Closing files (`defer file.Close()`)
+  - Unlocking mutexes
+  - Releasing network connections or database resources
 
 ---
 
 💡 **Tip:**
 Think of `defer` as a “**cleanup-on-exit**” mechanism — perfect for writing cleaner, safer Go code.
+
 ### 🔁 **Stacking `defer` in Go**
 
 In Go, **deferred function calls** are **pushed onto a stack**.
-When the surrounding function (`main`, in this case) returns, **deferred calls are executed in *last-in-first-out (LIFO)* order** — like popping items from a stack.
+When the surrounding function (`main`, in this case) returns, **deferred calls are executed in _last-in-first-out (LIFO)_ order** — like popping items from a stack.
 
 ---
 
@@ -1127,7 +1145,7 @@ func main() {
 2. When the loop finishes, all 10 deferred calls are stacked.
 3. As `main()` returns:
 
-   * Go pops and executes each deferred call **in reverse order**.
+   - Go pops and executes each deferred call **in reverse order**.
 
 ---
 
@@ -1163,9 +1181,9 @@ done
 
 ### 🧠 **Key Takeaways**
 
-* Deferred calls execute **after** the function finishes.
-* **LIFO order:** last deferred → executed first.
-* Commonly used for **cleanup in reverse order**, like:
+- Deferred calls execute **after** the function finishes.
+- **LIFO order:** last deferred → executed first.
+- Commonly used for **cleanup in reverse order**, like:
 
   ```go
   defer conn.Close()

@@ -127,12 +127,3 @@ func main() {
     fmt.Println("The time is", time.Now())
 }
 ```
-
----
-
-### Congratulations
-
-You’ve completed the **first module** of the Go Tour!
-
-Click **A Tour of Go** at the top to explore more topics,
-or proceed directly to the **next lesson** to continue your journey.

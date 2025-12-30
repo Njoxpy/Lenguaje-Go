@@ -1,4 +1,4 @@
-site_name: My Project Docs
+site_name: Golang Learning
 site_url: https://njoxpy.github.io/Lenguaje-Go/
 site_author: Godbless Nyagawa
 repo_url: https://github.com/Njoxpy/Lenguaje-Go
@@ -6,7 +6,7 @@ repo_name: GitHub
 
 # Theme configuration
 theme:
-  name: material
+  name: readthedocs
   color_mode: auto
   user_color_mode_toggle: true
   nav_style: primary
@@ -17,8 +17,7 @@ theme:
     - yaml
     - python
     - rust
-  analytics:
-    gtag: G-ABC1232e1 # Replace with your GA4 ID
+
   shortcuts:
     help: 191
     next: 78
@@ -34,9 +33,8 @@ theme:
 # Navigation structure including your files
 nav:
   - Home: index.md
-  - Advice: advice.md
-  - Docs: docs.md
-  - Roadmap: roadmap.md
+  - Advice: advice/advice.md
+  - Docs: intro/docs.md
 
   - Welcome & Basics (Tour Section 1):
       - Overview: "Welcome & Basics (Tour Section 1)/index.md"
@@ -53,6 +51,12 @@ nav:
       - Named Returns: moretypes/namedreturns.md
       - Slices: moretypes/slices.md
       - Methods: methodsandinterfaces/methodsandinterfaces.md
+      - Interfaces: methodsandinterfaces/interfaces.md
+
+  - Concurrency: intermediate/concurrency.md
+  - Debugging: debugging/index.md
+  - Testing: gotests/notes.md
+  - Interviews: interviews/index.md
 
   - Questions:
       - Overview: "questions/questions.md"

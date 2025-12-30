@@ -278,15 +278,16 @@ func main() {
 
 Go’s basic data types include:
 
-* `bool`
-* `string`
-* Numeric types:
+- `bool`
+- `string`
+- Numeric types:
 
-  * Signed integers: `int`, `int8`, `int16`, `int32`, `int64`
-  * Unsigned integers: `uint`, `uint8`, `uint16`, `uint32`, `uint64`, `uintptr`
-  * Aliases: `byte` (for `uint8`), `rune` (for `int32`, representing Unicode code points)
-* Floating point: `float32`, `float64`
-* Complex numbers: `complex64`, `complex128`
+  - Signed integers: `int`, `int8`, `int16`, `int32`, `int64`
+  - Unsigned integers: `uint`, `uint8`, `uint16`, `uint32`, `uint64`, `uintptr`
+  - Aliases: `byte` (for `uint8`), `rune` (for `int32`, representing Unicode code points)
+
+- Floating point: `float32`, `float64`
+- Complex numbers: `complex64`, `complex128`
 
 Typically, `int`, `uint`, and `uintptr` are 32 bits on 32-bit systems and 64 bits on 64-bit systems.
 Use `int` unless you have a specific reason to choose another type.
@@ -318,9 +319,9 @@ func main() {
 
 Variables declared without an explicit initializer are assigned their **zero value**:
 
-* `0` for numeric types
-* `false` for booleans
-* `""` (empty string) for strings
+- `0` for numeric types
+- `false` for booleans
+- `""` (empty string) for strings
 
 ```go
 package main
@@ -382,8 +383,8 @@ func main() {
 
 If you declare a variable without specifying its type (using `:=` or `var =`), Go infers the type from the value.
 
-* When the value has a type, the new variable takes that type.
-* When the value is an **untyped constant**, Go assigns a suitable default type.
+- When the value has a type, the new variable takes that type.
+- When the value is an **untyped constant**, Go assigns a suitable default type.
 
 Examples:
 
@@ -462,10 +463,3 @@ func main() {
 	fmt.Println(needFloat(Big))
 }
 ```
-
----
-
-## **🎉 Congratulations!**
-
-You’ve completed this Go basics module.
-You can now proceed to the next lesson or review previous ones to strengthen your understanding.

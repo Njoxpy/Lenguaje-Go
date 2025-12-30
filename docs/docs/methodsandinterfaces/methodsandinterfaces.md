@@ -175,11 +175,3 @@ Methods are extremely useful because they **associate behavior with data**. This
 
 - Methods are core to building maintainable, encapsulated, and testable business logic.
 - They reduce global state and allow you to write reusable APIs.
-
----
-
-If you want, I can **give a set of step-by-step method exercises** that include:
-
-- Value vs pointer receiver
-- Methods returning closures
-- Using methods in mini backend-style structs like `User`, `Account`, `Cart`
