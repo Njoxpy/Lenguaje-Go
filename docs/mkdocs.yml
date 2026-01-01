@@ -6,7 +6,7 @@ repo_name: GitHub
 
 # Theme configuration
 theme:
-  name: readthedocs
+  name: material
   color_mode: auto
   user_color_mode_toggle: true
   nav_style: primary

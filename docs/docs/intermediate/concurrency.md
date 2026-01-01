@@ -541,3 +541,7 @@ Ask yourself:
 If you can answer these, your concurrency will be solid.
 
 ---
+
+## Reference
+
+- [golang concurrency](https://www.concurrency.rocks/)
