@@ -540,7 +540,6 @@ Ask yourself:
 
 If you can answer these, your concurrency will be solid.
 
----
 
 ## Reference
 
