@@ -53,7 +53,10 @@ nav:
       - Methods: methodsandinterfaces/methodsandinterfaces.md
       - Interfaces: methodsandinterfaces/interfaces.md
 
-  - Concurrency: intermediate/concurrency.md
+  - Concurrency: 
+      - Introduction: intermediate/concurrency.md
+      - Select: intermediate/select.md
+      
   - Debugging: debugging/index.md
   - Testing: gotests/notes.md
   - Interviews: interviews/index.md
