@@ -10,25 +10,25 @@
         <meta name="author" content="Godbless Nyagawa">
       
       
-        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/debugging/">
+        <link rel="canonical" href="https://njoxpy.github.io/Lenguaje-Go/intermediate/select/">
       
       
-        <link rel="prev" href="../intermediate/syncwaitgroup/">
+        <link rel="prev" href="../concurrency/">
       
       
-        <link rel="next" href="../gotests/notes/">
+        <link rel="next" href="../syncwaitgroup/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Debugging - Golang Learning</title>
+        <title>Select - Golang Learning</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
       
 
@@ -47,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-install-delve" class="md-skip">
+        <a href="#go-select-summary" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Golang Learning" class="md-header__button md-logo" aria-label="Golang Learning" data-md-component="logo">
+    <a href="../.." title="Golang Learning" class="md-header__button md-logo" aria-label="Golang Learning" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Debugging
+              Select
             
           </span>
         </div>
@@ -192,7 +192,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Golang Learning" class="md-nav__button md-logo" aria-label="Golang Learning" data-md-component="logo">
+    <a href="../.." title="Golang Learning" class="md-nav__button md-logo" aria-label="Golang Learning" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -244,7 +244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advice/advice/" class="md-nav__link">
+      <a href="../../advice/advice/" class="md-nav__link">
         
   
   
@@ -266,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/docs/" class="md-nav__link">
+      <a href="../../intro/docs/" class="md-nav__link">
         
   
   
@@ -326,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
+      <a href="../../Welcome%20%26%20Basics%20%28Tour%20Section%201%29/" class="md-nav__link">
         
   
   
@@ -394,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
+      <a href="../../Packages%2C%20Variables%2C%20Functions%20%2817%20parts%29/" class="md-nav__link">
         
   
   
@@ -462,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../controlflowstatements/" class="md-nav__link">
+      <a href="../../controlflowstatements/" class="md-nav__link">
         
   
   
@@ -530,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/" class="md-nav__link">
+      <a href="../../moretypes/" class="md-nav__link">
         
   
   
@@ -553,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/map/" class="md-nav__link">
+      <a href="../../moretypes/map/" class="md-nav__link">
         
   
   
@@ -576,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/functions/" class="md-nav__link">
+      <a href="../../moretypes/functions/" class="md-nav__link">
         
   
   
@@ -599,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/namedreturns/" class="md-nav__link">
+      <a href="../../moretypes/namedreturns/" class="md-nav__link">
         
   
   
@@ -622,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../moretypes/slices/" class="md-nav__link">
+      <a href="../../moretypes/slices/" class="md-nav__link">
         
   
   
@@ -645,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
+      <a href="../../methodsandinterfaces/methodsandinterfaces/" class="md-nav__link">
         
   
   
@@ -668,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../methodsandinterfaces/interfaces/" class="md-nav__link">
+      <a href="../../methodsandinterfaces/interfaces/" class="md-nav__link">
         
   
   
@@ -695,18 +695,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -722,7 +724,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Concurrency
@@ -736,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intermediate/concurrency/" class="md-nav__link">
+      <a href="../concurrency/" class="md-nav__link">
         
   
   
@@ -756,10 +758,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../intermediate/select/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Select
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -770,6 +794,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ What is select?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Basic Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-non-blocking-select-with-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Non-blocking select with default
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-timeout-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Timeout Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-shutdown-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Shutdown Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key-rules-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Key Rules &amp; Insights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Mental Model
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -782,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intermediate/syncwaitgroup/" class="md-nav__link">
+      <a href="../syncwaitgroup/" class="md-nav__link">
         
   
   
@@ -809,30 +916,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Debugging
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../debugging/" class="md-nav__link">
         
   
   
@@ -843,186 +930,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-install-delve" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Install Delve
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-start-a-debug-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Start a debug session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Start a debug session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#start-debugging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start debugging
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-basic-dlv-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Basic dlv commands
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Basic dlv commands">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-breakpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 Breakpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-run-the-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Run the program
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-inspect-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Inspect variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-step-through-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Step through code
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-list-code-around-current-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 List code around current line
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#36-watch-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6 Watch variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#37-backtrace" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.7 Backtrace
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-exit-debug-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Exit debug session
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-debugging-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Debugging tests
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-tips-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Tips &amp; best practices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Tips &amp; best practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example session:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1034,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gotests/notes/" class="md-nav__link">
+      <a href="../../gotests/notes/" class="md-nav__link">
         
   
   
@@ -1056,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interviews/" class="md-nav__link">
+      <a href="../../interviews/" class="md-nav__link">
         
   
   
@@ -1116,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/questions/" class="md-nav__link">
+      <a href="../../questions/questions/" class="md-nav__link">
         
   
   
@@ -1139,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../questions/" class="md-nav__link">
+      <a href="../../questions/" class="md-nav__link">
         
   
   
@@ -1207,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/projects/" class="md-nav__link">
+      <a href="../../projects/projects/" class="md-nav__link">
         
   
   
@@ -1247,6 +1154,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1255,162 +1164,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install-delve" class="md-nav__link">
+  <a href="#1-what-is-select" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Install Delve
+      1️⃣ What is select?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-start-a-debug-session" class="md-nav__link">
+  <a href="#2-basic-syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Start a debug session
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Start a debug session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#start-debugging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start debugging
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-basic-dlv-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Basic dlv commands
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Basic dlv commands">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-breakpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 Breakpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-run-the-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Run the program
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-inspect-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Inspect variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-step-through-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Step through code
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-list-code-around-current-line" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 List code around current line
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#36-watch-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.6 Watch variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#37-backtrace" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.7 Backtrace
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-exit-debug-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Exit debug session
+      2️⃣ Basic Syntax
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-debugging-tests" class="md-nav__link">
+  <a href="#3-non-blocking-select-with-default" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Debugging tests
+      3️⃣ Non-blocking select with default
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-tips-best-practices" class="md-nav__link">
+  <a href="#4-timeout-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Tips &amp; best practices
+      4️⃣ Timeout Pattern
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="6. Tips &amp; best practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example session:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#5-shutdown-pattern" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      5️⃣ Shutdown Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key-rules-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Key Rules &amp; Insights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Mental Model
     </span>
   </a>
   
@@ -1435,150 +1245,91 @@
   
 
 
-  <h1>Debugging</h1>
-
-<h2 id="1-install-delve">1. Install Delve<a class="headerlink" href="#1-install-delve" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>go<span class="w"> </span>install<span class="w"> </span>github.com/go-delve/delve/cmd/dlv@latest
-</code></pre></div>
-
+<h1 id="go-select-summary">Go <code>select</code> Summary<a class="headerlink" href="#go-select-summary" title="Permanent link">&para;</a></h1>
+<h3 id="1-what-is-select">1️⃣ What is <code>select</code>?<a class="headerlink" href="#1-what-is-select" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Make sure your <code>$GOPATH/bin</code> or <code>$HOME/go/bin</code> is in your PATH.</li>
-<li>Check installation:</li>
+<li><code>select</code> lets a goroutine <strong>wait on multiple channels at the same time</strong>.</li>
+<li>Executes <strong>the first channel that’s ready</strong>.</li>
+<li>Like a <code>switch</code> for channels.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span>version
-</code></pre></div>
-
-<h2 id="2-start-a-debug-session">2. Start a debug session<a class="headerlink" href="#2-start-a-debug-session" title="Permanent link">&para;</a></h2>
-<p>Assume you have a Go program <code>main.go</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">Add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span>
-<span class="p">}</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">sum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">Add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span>
-<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Sum:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">sum</span><span class="p">)</span>
+<h3 id="2-basic-syntax">2️⃣ Basic Syntax<a class="headerlink" href="#2-basic-syntax" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="p">{</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch1</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Received:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">)</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch2</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Received:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h3 id="start-debugging">Start debugging<a class="headerlink" href="#start-debugging" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span>debug
+<ul>
+<li>Blocks until <strong>one channel is ready</strong></li>
+<li>If multiple are ready, <strong>Go picks one randomly</strong></li>
+<li>Only <strong>one case executes</strong></li>
+</ul>
+<h3 id="3-non-blocking-select-with-default">3️⃣ Non-blocking <code>select</code> with <code>default</code><a class="headerlink" href="#3-non-blocking-select-with-default" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="p">{</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<span class="k">default</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;No message yet&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <ul>
-<li>This <strong>compiles your program with debugging info</strong> and starts an interactive session.</li>
+<li>Executes <code>default</code> immediately if <strong>no channel is ready</strong></li>
+<li>Useful for <strong>non-blocking checks</strong></li>
+<li>Avoid looping with <code>default</code> → busy loops</li>
 </ul>
-<h2 id="3-basic-dlv-commands">3. Basic <code>dlv</code> commands<a class="headerlink" href="#3-basic-dlv-commands" title="Permanent link">&para;</a></h2>
-<h3 id="31-breakpoints">3.1 Breakpoints<a class="headerlink" href="#31-breakpoints" title="Permanent link">&para;</a></h3>
-<p>Set a breakpoint at a line:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main.go:6
+<h3 id="4-timeout-pattern">4️⃣ Timeout Pattern<a class="headerlink" href="#4-timeout-pattern" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="p">{</span>
+<span class="k">case</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">ch</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">time</span><span class="p">.</span><span class="nx">After</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">):</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Timeout!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <ul>
-<li>Or at a function:</li>
+<li>Waits for a value or a timeout</li>
+<li>Perfect for <strong>network calls, DB queries, HTTP requests</strong></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main.Add
-</code></pre></div>
+<h3 id="5-shutdown-pattern">5️⃣ Shutdown Pattern<a class="headerlink" href="#5-shutdown-pattern" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nx">done</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span>
 
-<h3 id="32-run-the-program">3.2 Run the program<a class="headerlink" href="#32-run-the-program" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
+<span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// work</span>
+<span class="w">    </span><span class="nx">done</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}()</span>
+
+<span class="k">select</span><span class="w"> </span><span class="p">{</span>
+<span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">done</span><span class="p">:</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Work finished&quot;</span><span class="p">)</span>
+<span class="k">case</span><span class="w"> </span><span class="o">&lt;-</span><span class="nx">time</span><span class="p">.</span><span class="nx">After</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">):</span>
+<span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Work timed out&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <ul>
-<li>Runs until it hits a breakpoint.</li>
+<li>Gracefully stop long-running goroutines</li>
+<li>Essential for <strong>real backend servers</strong></li>
 </ul>
-<h3 id="33-inspect-variables">3.3 Inspect variables<a class="headerlink" href="#33-inspect-variables" title="Permanent link">&para;</a></h3>
-<p>When stopped at a breakpoint:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>x
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>y
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>sum
-</code></pre></div>
-
-<ul>
-<li>You can also evaluate expressions:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>x<span class="w"> </span>+<span class="w"> </span>y
-</code></pre></div>
-
-<h3 id="34-step-through-code">3.4 Step through code<a class="headerlink" href="#34-step-through-code" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Step into functions:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>step
-</code></pre></div>
-
-<ul>
-<li>Step over current line:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>next
-</code></pre></div>
-
-<ul>
-<li>Step out of the current function:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>stepout
-</code></pre></div>
-
-<h3 id="35-list-code-around-current-line">3.5 List code around current line<a class="headerlink" href="#35-list-code-around-current-line" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>list
-</code></pre></div>
-
-<h3 id="36-watch-variables">3.6 Watch variables<a class="headerlink" href="#36-watch-variables" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>watch<span class="w"> </span>sum
-</code></pre></div>
-
-<ul>
-<li>Stops execution when <code>sum</code> changes.</li>
-</ul>
-<h3 id="37-backtrace">3.7 Backtrace<a class="headerlink" href="#37-backtrace" title="Permanent link">&para;</a></h3>
-<p>Show the call stack:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>bt
-</code></pre></div>
-
-<h2 id="4-exit-debug-session">4. Exit debug session<a class="headerlink" href="#4-exit-debug-session" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>quit
-</code></pre></div>
-
-<h2 id="5-debugging-tests">5. Debugging tests<a class="headerlink" href="#5-debugging-tests" title="Permanent link">&para;</a></h2>
-<p>You can also debug tests:</p>
-<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span><span class="nb">test</span>
-</code></pre></div>
-
-<ul>
-<li>Or debug a specific test:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code>dlv<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--<span class="w"> </span>-test.run<span class="w"> </span>TestAdd
-</code></pre></div>
-
-<ul>
-<li>Use the same commands (<code>break</code>, <code>print</code>, <code>next</code>, etc.) inside your test.</li>
-</ul>
-<h2 id="6-tips-best-practices">6. Tips &amp; best practices<a class="headerlink" href="#6-tips-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="6-key-rules-insights">6️⃣ Key Rules &amp; Insights<a class="headerlink" href="#6-key-rules-insights" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Use breakpoints on functions rather than line numbers</strong> when refactoring often.</li>
-<li><strong>Inspect complex types</strong>: slices, structs, maps using <code>print</code>.</li>
-<li><strong>Step over vs step into</strong>: <code>next</code> skips function internals; <code>step</code> enters.</li>
-<li>Combine with <strong>VS Code or GoLand</strong> for GUI debugging; Delve works behind the scenes.</li>
+<li>Only <strong>one case executes</strong>, even if multiple channels are ready</li>
+<li>Channels can be <strong>buffered</strong> or <strong>unbuffered</strong></li>
+<li><code>select</code> <strong>blocks</strong> until a case is ready (unless <code>default</code>)</li>
+<li><code>select</code> is used for <strong>coordination</strong>, not just data transfer</li>
+<li>Always handle <strong>timeouts</strong> or <strong>shutdown signals</strong> in real systems</li>
 </ol>
-<h3 id="example-session">Example session:<a class="headerlink" href="#example-session" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>dlv<span class="w"> </span>debug
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">break</span><span class="w"> </span>main.Add
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>x
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>next
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>step
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>print<span class="w"> </span>sum
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span><span class="k">continue</span>
-<span class="o">(</span>dlv<span class="o">)</span><span class="w"> </span>quit
-</code></pre></div>
-
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="7-mental-model">7️⃣ Mental Model<a class="headerlink" href="#7-mental-model" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://github.com/go-delve/delve">Delve is a debugger for the Go programming language.</a></li>
+<li><strong>Goroutines</strong> = workers</li>
+<li><strong>Channels</strong> = pipes carrying messages or signals</li>
+<li><strong>select</strong> = traffic controller deciding which message to process next</li>
 </ul>
+<blockquote>
+<p><code>select</code> allows you to <strong>wait on multiple channels safely</strong>, coordinate goroutines, handle timeouts, and build real backend patterns without busy loops or guessing.</p>
+</blockquote>
 
 
 
@@ -1627,10 +1378,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
